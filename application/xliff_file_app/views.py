@@ -2,6 +2,7 @@ import os
 import re
 import xml.etree.ElementTree as ET
 import subprocess
+from django.conf import settings
 from django.shortcuts import render
 from django.http import FileResponse, HttpResponse
 from django.core.files.storage import default_storage
@@ -83,9 +84,13 @@ def upload_xliff(request):
         if not xliff_file.name.endswith(".xlf") and not xliff_file.name.endswith(".xliff"):
             return HttpResponse("Invalid file format. Please upload an XLIFF file.", status=400)
         
-        file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
-        full_path = os.path.join(default_storage.location, file_path)
-        print(f"DEBUG: File saved at {full_path}")
+        file_path = os.path.join(settings.MEDIA_ROOT, "xliff_files", xliff_file.name)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        # full_path = os.path.join(default_storage.location, file_path)
+        # print(f"DEBUG: File saved at {full_path}")
+        with open(file_path, "wb") as f:
+            for chunk in xliff_file.chunks():
+                f.write(chunk)
 
         cache.set("progress", 10, timeout=600)
         cache.set("translation_complete", False, timeout=600)
@@ -98,7 +103,7 @@ def upload_xliff(request):
 
             #  Run script in unbuffered mode for real-time output
             process = subprocess.Popen(
-                ["python", "-u", "script4.py", full_path],  
+                ["python", "-u", "script4.py", file_path],  
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
@@ -196,8 +201,8 @@ def upload_xliff(request):
                 return JsonResponse({"error": "Translation failed, file not found."}, status=500)
 
             translated_file_name = os.path.basename(translated_file_path)
-            translated_file_url = f"/media/{quote(translated_file_name)}"
-            
+            translated_file_url = f"{settings.MEDIA_URL}xliff_files/{quote(translated_file_name)}"
+
             print(f"DEBUG: Translated file URL - {translated_file_url}")
             return JsonResponse({"translated_file_url": translated_file_url})
 

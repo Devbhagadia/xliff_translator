@@ -199,9 +199,13 @@ translated_Data = [
 output_file = os.path.join(TEMP_DIR, os.path.basename(input_file).replace(".xlf", "_translated.xlf"))
 tree.write(output_file, encoding="utf-8", xml_declaration=True)
 
-# Print translation outputs (for logging only)
-for i in range(len(source_Data)):
-    print(f"TRANSLATION_OUTPUT: {source_Data[i]}|||{translated_Data[i]}")
+import json
 
-# Log message AFTER writing the file (so it doesn’t get included in translations)
-print("\nTranslated file saved:", output_file)
+# ✅ Structure response properly
+response_data = {
+    "translated_file": output_file,  # Path to translated file
+    "translations": [{"original": src, "translated": trans} for src, trans in zip(source_Data, translated_Data)]
+}
+
+# ✅ Print JSON so Django can read it
+print(json.dumps(response_data))  

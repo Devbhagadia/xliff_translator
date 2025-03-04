@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import xml.etree.ElementTree as ET
@@ -47,10 +48,13 @@ def check_progress(request):
 
 
 
-def enqueue_output(out, queue):
-    for line in iter(out.readline, ""):
-        queue.put(line)
-    out.close()
+def enqueue_output(pipe, q):
+    """ Helper function to read process output asynchronously. """
+    try:
+        for line in iter(pipe.readline, ''):
+            q.put(line)
+    finally:
+        pipe.close()
 
 def download_file(request, file_name):
     file_path = os.path.join(default_storage.location, "xliff_files", file_name)
@@ -110,7 +114,7 @@ def upload_xliff(request):
             t.daemon = True
             t.start()
 
-            translated_content = []  # ✅ Instead of file path, store translated text
+            # ✅ Track progress and logs
             translation_started = False
 
             while process.poll() is None:
@@ -130,12 +134,7 @@ def upload_xliff(request):
                         except ValueError:
                             print(f"WARNING: Invalid progress format: {line}")
 
-                    # ✅ Store translation directly from script output
-                    if "TRANSLATION_OUTPUT:" in line:
-                        _, content = line.split("TRANSLATION_OUTPUT: ", 1)
-                        translated_content.append(content.strip())
-
-            process.wait()
+            process.wait()  # Ensure process completion
 
             if translation_started:
                 cache.set("progress", 100, timeout=600)
@@ -143,15 +142,27 @@ def upload_xliff(request):
 
             cache.set("progress", 100, timeout=600)
 
-            if not translated_content:
-                print(f"ERROR: No translation content received!")
-                return JsonResponse({"error": "Translation failed, no output received."}, status=500)
+            # ✅ Read JSON output from script
+            try:
+                script_output, script_error = process.communicate()
 
-            return JsonResponse({"translated_text": translated_content})
+                if script_error:
+                    print(f"ERROR: Script failed: {script_error}")
+                    return JsonResponse({"error": "Translation script failed", "details": script_error}, status=500)
+
+                script_data = json.loads(script_output.strip())  # Parse JSON output
+
+                return JsonResponse({
+                    "translated_file": script_data["translated_file"],
+                    "translations": script_data["translations"]
+                })
+
+            except json.JSONDecodeError:
+                return JsonResponse({"error": "Invalid JSON response from script."}, status=500)
 
         except Exception as e:
-            return HttpResponse(f"Error processing XLIFF file: {e}")
-        
+            return HttpResponse(f"Error processing XLIFF file: {e}", status=500)
+             
         
 def save_edits(request):
     if request.method == "POST":

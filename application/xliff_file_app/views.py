@@ -77,7 +77,9 @@ def upload_xliff(request):
         cache.set("translation_complete", False, timeout=600)
         print("DEBUG: Progress reset to 0% before upload")
         xliff_file = request.FILES["xliff_file"]
-        file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
+        file_path = os.path.join("/tmp", xliff_file.name)
+        with open(file_path, "wb") as f:
+            f.write(xliff_file.read())
         full_path = os.path.join(default_storage.location, file_path)
         print(f"DEBUG: File saved at {full_path}")
 
@@ -100,6 +102,9 @@ def upload_xliff(request):
                 encoding="utf-8",
                 errors="replace"
             )
+            stdout, stderr = process.communicate()
+            print(f"DEBUG: Script stdout: {stdout}")
+            print(f"DEBUG: Script stderr: {stderr}")
 
             #  Use a queue for async reading
             q = queue.Queue()
@@ -190,7 +195,7 @@ def upload_xliff(request):
             
             translated_file_url = default_storage.url(translated_file_path)
             print(f"DEBUG: Translated file URL - {translated_file_url}")
-            
+
             translated_file_name = os.path.basename(translated_file_path)
 
             request.session["translated_file_path"] = translated_file_path

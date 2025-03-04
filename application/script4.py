@@ -196,7 +196,7 @@ translated_Data = [
 
 
 # Now, write the filtered translations to the file
-output_file = input_file.replace(".xlf", "_translated.xlf")
+output_file = os.path.join("/tmp", os.path.basename(input_file).replace(".xlf", "_translated.xlf"))
 tree.write(output_file, encoding="utf-8", xml_declaration=True)
 
 # Print translation outputs (for logging only)

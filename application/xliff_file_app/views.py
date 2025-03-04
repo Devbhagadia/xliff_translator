@@ -16,6 +16,8 @@ import threading
 import queue
 import uuid
 import logging
+from urllib.parse import quote
+
 
 logger = logging.getLogger(__name__)
 
@@ -44,11 +46,10 @@ def check_progress(request):
 
 
 
-def enqueue_output(stream, q):
-    """ Read process output line-by-line and store it in a queue """
-    for line in iter(stream.readline, ""):
-        q.put(line.strip())
-    stream.close()
+def enqueue_output(out, queue):
+    for line in iter(out.readline, ""):
+        queue.put(line)
+    out.close()
 
 def download_file(request, file_name):
     file_path = os.path.join(default_storage.location, "xliff_files", file_name)
@@ -188,13 +189,15 @@ def upload_xliff(request):
                         print(f"ERROR: Issue processing line '{line}': {e}")
 
             print(f"DEBUG: Extracted translated_file_path: {translated_file_path}")
+
+
             if not translated_file_path or not os.path.exists(translated_file_path):
                 print(f"ERROR: Translated file path is missing! Checked path: {translated_file_path}")
                 return JsonResponse({"error": "Translation failed, file not found."}, status=500)
 
             translated_file_name = os.path.basename(translated_file_path)
-            relative_path = os.path.relpath(translated_file_path, default_storage.location)
-            translated_file_url = default_storage.url(relative_path)
+            translated_file_url = f"/media/{quote(translated_file_name)}"
+            
             print(f"DEBUG: Translated file URL - {translated_file_url}")
             return JsonResponse({"translated_file_url": translated_file_url})
 

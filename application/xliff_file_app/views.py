@@ -188,24 +188,15 @@ def upload_xliff(request):
                         print(f"ERROR: Issue processing line '{line}': {e}")
 
             print(f"DEBUG: Extracted translated_file_path: {translated_file_path}")
-            translated_file_name = os.path.basename(translated_file_path)
-            translated_file_url = default_storage.url(translated_file_path)
-            return JsonResponse({"translated_file_url": translated_file_url})
             if not translated_file_path or not os.path.exists(translated_file_path):
-                print(f"ERROR: File missing at {translated_file_path}")
-                return HttpResponse(f"Error: Translated file path not found. Checked path: {translated_file_path}")
-            
-            
+                print(f"ERROR: Translated file path is missing! Checked path: {translated_file_path}")
+                return JsonResponse({"error": "Translation failed, file not found."}, status=500)
+
+            translated_file_name = os.path.basename(translated_file_path)
+            relative_path = os.path.relpath(translated_file_path, default_storage.location)
+            translated_file_url = default_storage.url(relative_path)
             print(f"DEBUG: Translated file URL - {translated_file_url}")
-            
-            # translated_file_name = os.path.basename(translated_file_path)
-
-            request.session["translated_file_path"] = translated_file_path
-            request.session["translated_file_name"] = translated_file_name  
-
-            cache.set("translation_complete", True, timeout=600)
-
-            
+            return JsonResponse({"translated_file_url": translated_file_url})
 
         except Exception as e:
             return HttpResponse(f"Error processing XLIFF file: {e}")

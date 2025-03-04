@@ -209,3 +209,6 @@ response_data = {
 
 # ✅ Print JSON so Django can read it
 print(json.dumps(response_data))  
+json_output = json.dumps(response_data)  
+sys.stdout.write(json_output)  # ✅ Send pure JSON to Django
+sys.stdout.flush()  # ✅ Ensure it's written properly

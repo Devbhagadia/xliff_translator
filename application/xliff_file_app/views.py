@@ -81,6 +81,7 @@ def download_translated_file(request):
 
 def upload_xliff(request):
     if request.method == "POST" and request.FILES.get("xliff_file"):
+        # ✅ Reset progress tracking
         cache.set("progress", 0, timeout=600)
         cache.set("translation_complete", False, timeout=600)
         print("DEBUG: Progress reset to 0% before upload")
@@ -89,7 +90,7 @@ def upload_xliff(request):
         if not xliff_file.name.endswith((".xlf", ".xliff")):
             return HttpResponse("Invalid file format. Please upload an XLIFF file.", status=400)
 
-        # ✅ Save uploaded file
+        # ✅ Save the uploaded XLIFF file
         file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
         full_path = os.path.join(default_storage.location, file_path)
         print(f"DEBUG: File saved at {full_path}")
@@ -98,9 +99,9 @@ def upload_xliff(request):
         print("DEBUG: Progress set to 10%")
 
         try:
-            # ✅ Run script and capture output
+            # ✅ Run script4.py and capture output
             process = subprocess.Popen(
-                ["python3", "-u", "script4.py", full_path],  
+                ["python3", "-u", "script4.py", full_path],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
@@ -114,7 +115,7 @@ def upload_xliff(request):
             t.daemon = True
             t.start()
 
-            # ✅ Track progress and logs
+            # ✅ Track progress updates
             translation_started = False
 
             while process.poll() is None:
@@ -134,35 +135,32 @@ def upload_xliff(request):
                         except ValueError:
                             print(f"WARNING: Invalid progress format: {line}")
 
-            process.wait()  # Ensure process completion
+            process.wait()  # Ensure process completes
 
             if translation_started:
                 cache.set("progress", 100, timeout=600)
                 print("DEBUG: Progress set to 100% after translation")
 
-            cache.set("progress", 100, timeout=600)
+            # ✅ Read and process script output
+            script_output, script_error = process.communicate()
 
-            # ✅ Read JSON output from script
+            if script_error:
+                print(f"ERROR: Script failed: {script_error}")
+                return JsonResponse({"error": "Translation script failed", "details": script_error}, status=500)
+
             try:
-                script_output, script_error = process.communicate()
-
-                if script_error:
-                    print(f"ERROR: Script failed: {script_error}")
-                    return JsonResponse({"error": "Translation script failed", "details": script_error}, status=500)
-
-                script_data = json.loads(script_output.strip())  # Parse JSON output
-
+                script_data = json.loads(script_output.strip())  # ✅ Parse JSON output from script
                 return JsonResponse({
                     "translated_file": script_data["translated_file"],
                     "translations": script_data["translations"]
                 })
 
             except json.JSONDecodeError:
-                return JsonResponse({"error": "Invalid JSON response from script."}, status=500)
+                print(f"ERROR: Invalid JSON response: {script_output}")
+                return JsonResponse({"error": "Invalid JSON response from script.", "raw_output": script_output}, status=500)
 
         except Exception as e:
             return HttpResponse(f"Error processing XLIFF file: {e}", status=500)
-             
         
 def save_edits(request):
     if request.method == "POST":

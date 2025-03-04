@@ -203,10 +203,7 @@ def upload_xliff(request):
 
             cache.set("translation_complete", True, timeout=600)
 
-            return render(request, "index.html", {
-                "translations": translations,
-                "translated_file_name": translated_file_name
-            })
+            return JsonResponse({"translated_file_url": translated_file_url})
 
         except Exception as e:
             return HttpResponse(f"Error processing XLIFF file: {e}")

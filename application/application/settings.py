@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$j7%8nlza!n(-x*wns%r%#h71ig=y283x7#pxtd7ioq53lg$r4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["xliff-translator.onrender.com","127.0.0.1","localhost",]
 
 
 # Application definition

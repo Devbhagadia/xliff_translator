@@ -15,7 +15,9 @@ from django.core.cache import cache
 import threading
 import queue
 import uuid
+import logging
 
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -77,6 +79,9 @@ def upload_xliff(request):
         cache.set("translation_complete", False, timeout=600)
         print("DEBUG: Progress reset to 0% before upload")
         xliff_file = request.FILES["xliff_file"]
+        if not xliff_file.name.endswith(".xlf") and not xliff_file.name.endswith(".xliff"):
+            return HttpResponse("Invalid file format. Please upload an XLIFF file.", status=400)
+        
         file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
         full_path = os.path.join(default_storage.location, file_path)
         print(f"DEBUG: File saved at {full_path}")

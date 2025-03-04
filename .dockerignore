@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django-related files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore media/uploads (if any)
+media/
+staticfiles/
+
+# Ignore environment variables
+.env
+.env.local
+.env.*.local
+
+# Ignore Docker-related build files (but not Dockerfile)
+*.tar
+*.pid
+
+# Keep caching and database for now
+# (DO NOT IGNORE db.sqlite3 OR CACHE FILES)

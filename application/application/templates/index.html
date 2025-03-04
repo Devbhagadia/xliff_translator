@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLIFF Translator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* ✅ Progress Bar Styling */
+        #progress-container {
+            width: 100%;
+            background: #ddd;
+            height: 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none; /* Hidden initially */
+        }
+        #progress-bar {
+            height: 100%;
+            background: #4caf50;
+            width: 0%;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">XLIFF Translator</h2>
+        
+        <!-- ✅ File Upload Form -->
+        <form id="uploadForm" action="{% url 'upload_xliff' %}" method="POST" enctype="multipart/form-data" class="mt-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="xliffFile" class="form-label">Upload XLIFF File</label>
+                <input type="file" class="form-control" name="xliff_file" id="xliffFile" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="translateBtn">Translate</button>
+
+            <!-- ✅ Loader with Progress Bar -->
+            <div id="loader" class="mt-3 text-center" style="display: none;">
+                <p>Translating... <span id="progress-text">0%</span></p>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+        </form>
+
+        {% if translations %}
+        <div class="mt-4">
+            <h4 class="text-center">Translation Preview</h4>
+            
+            <!-- ✅ Edit Form -->
+            <form id="editForm" action="{% url 'save_edits' %}" method="POST">
+                {% csrf_token %}
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Original Text</th>
+                                <th>Translated Text (Editable)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pair in translations %}
+                            <tr>
+                                <td>{{ pair.source }}</td>
+                                <td>
+                                    <input type="text" name="translated_text[]" class="form-control edit-field" value="{{ pair.target }}" disabled>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ✅ Action Buttons -->
+                <div id="actions" class="mt-4 text-center">
+                    <button type="button" id="editBtn" class="btn btn-warning">Edit</button>
+                    <button type="submit" id="saveBtn" class="btn btn-success" style="display: none;">Save Changes</button>
+                    
+                    {% if translated_file_name %}
+                        <a href="{% url 'download_file' file_name=translated_file_name %}" class="btn btn-success">Download</a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- ✅ JavaScript for Progress Bar -->
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function() {
+        document.getElementById("translateBtn").style.display = "none";  
+        document.getElementById("loader").style.display = "block";  
+        document.getElementById("progress-container").style.display = "block"; 
+        checkProgress();  // ✅ Start checking progress
+    });
+
+function checkProgress() {
+    fetch("/check-progress/")
+        .then(response => response.json())
+        .then(data => {
+            console.log("DEBUG Progress:", data.progress, "Translation Complete:", data.translation_complete); // ✅ Log both values
+
+            const progressBar = document.getElementById("progress-bar");
+            const progressText = document.getElementById("progress-text");
+
+            if (progressBar && progressText) { 
+                progressBar.style.width = data.progress + "%";
+                progressText.innerText = data.progress + "%";
+            }
+
+            if (data.progress < 100 || !data.translation_complete) {  // ✅ Ensure full completion
+                setTimeout(checkProgress, 1000);
+            } else {
+                document.getElementById("loader").innerHTML = "<p> Translation Complete! Displaying the translated texts now...</p>";
+                document.getElementById("translateBtn").style.display = "block";
+                showTranslatedTexts();  // ✅ Ensure translated text appears
+            }
+        })
+        .catch(error => console.error("Error fetching progress:", error));
+}
+
+
+        // Enable editing when "Edit" button is clicked
+        document.getElementById("editBtn").addEventListener("click", function() {
+            document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
+            document.getElementById("saveBtn").style.display = "inline-block"; // Show Save button
+            document.getElementById("editBtn").style.display = "none"; // Hide Edit button
+        });
+    </script>
+</body>
+</html>

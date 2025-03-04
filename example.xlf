@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="zh-cn" datatype="plaintext" original="messages">
+        <header>
+            <note>Sample XLIFF file with all possible tags</note>
+        </header>
+        <body>
+
+            <!-- Simple Translation Units -->
+            <trans-unit id="1">
+                <source>Hello, world!</source>
+                <target>Bonjour, le monde!</target>
+                <note priority="1">Greeting message</note>
+            </trans-unit>
+
+            <trans-unit id="2">
+                <source>Welcome to our website.</source>
+                <target>Bienvenue sur notre site Web.</target>
+            </trans-unit>
+
+            <!-- Trans-Unit with Nested HTML Tags -->
+            <trans-unit id="3">
+                <source><b>Important:</b> Please read the instructions.</source>
+                <target><b>Important:</b> Veuillez lire les instructions.</target>
+            </trans-unit>
+
+            <!-- Grouping Related Translations -->
+                <trans-unit id="4">
+                    <source>Contact Us</source>
+                    <target>Contactez-nous</target>
+                </trans-unit>
+                <trans-unit id="5">
+                    <source>About Us</source>
+                    <target>À propos de nous</target>
+                </trans-unit>
+
+            <!-- Alternative Translations -->
+            <trans-unit id="6">
+                <source>Order Now</source>
+                <target>Commandez maintenant</target>
+                <alt-trans>
+                    <target>Passer la commande</target>
+                </alt-trans>
+            </trans-unit>
+
+            <!-- Translation with Inline Placeholder -->
+            <trans-unit id="7">
+                <source>Hello, <ph id="1"/>!</source>
+                <target>Bonjour, <ph id="1"/>!</target>
+            </trans-unit>
+
+            <!-- Complex Structure with Multiple Notes -->
+            <trans-unit id="8">
+                <source>Sign in to continue</source>
+                <target>Connectez-vous pour continuer</target>
+                <note>Displayed on the login page</note>
+                <note priority="2">Important for user authentication</note>
+            </trans-unit>
+
+            <!-- Grouping Product Labels -->
+            <group id="products">
+                <trans-unit id="9">
+                    <source>Product Name</source>
+                    <target>Nom du produit</target>
+                </trans-unit>
+                <trans-unit id="10">
+                    <source>Price</source>
+                    <target>Prix</target>
+                </trans-unit>
+                <trans-unit id="11">
+                    <source>In Stock</source>
+                    <target>En stock</target>
+                </trans-unit>
+            </group>
+
+            <!-- Long Paragraph Translation -->
+            <trans-unit id="12">
+                <source>
+                    This application provides a seamless shopping experience with a secure checkout process.
+                </source>
+                <target>
+                    Cette application offre une expérience d'achat fluide avec un processus de paiement sécurisé.
+                </target>
+            </trans-unit>
+
+            <trans-unit id="5f7z1FMg8an" xml:space="preserve" datatype="x-DocumentState"><source><bpt ctype="x-block" id="block_0" /><ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0" FirstLineMargin="0" Justification="Left" DefaultTabStop="64" ListLevel="0" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Start="0" Color="#000000" Size="100" BulletFont="Arial" /&gt;&lt;/Style&gt;</ph><bpt ctype="x-style" id="span_2">&lt;Style FontFamily="Roboto Medium" FontSize="24" FontIsBold="False" FontIsItalic="False" FontIsUnderline="False" FontIsStrikeout="False" UnderlineStyle="Normal" ForegroundColor="dk1,00" BackgroundColor="#000000,00" UnderlineColor="#000000,00" Elevation="Normal" Spacing="0" IgnoreKerningTable="False" DisplayCase="AsIs" LanguageId="0" LinkColor="dk1,00"&gt;&#xD;
+  &lt;Shadow Offset="0x0" Color="#FFFFFF,00" /&gt;&#xD;
+&lt;/Style&gt;</bpt><g ctype="x-text" id="text_2">What does people-centred care look like?</g><ept id="span_2" /><ept id="block_0" /></source></trans-unit>
+
+        </body>
+    </file>
+</xliff>

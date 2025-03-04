@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file
+        original="C:\Users\Basil\Desktop\Temp_SVN\NHRCC\Tech\Production\Management of Shortness of Breath\Management_of Shortness_of_Breath.story"
+        source-language="en-US" datatype="xml">
+
+        <body><trans-unit id="5qXOCdDTnuv" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">%slide_name%</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6H6wEOmWq3b" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style Justification="Center" DefaultTabStop="69.8181839" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10.5" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">%page_no%/%total_pages%</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5fJoK20xtMw" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="16.5" FontIsBold="False" ForegroundColor="#FFFFFF"
+                    LinkColor="#FFFFFF" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Management of Shortness of Breath</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5xfVJGbT4xM" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="8.997444" FontIsItalic="True"
+                    ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Click </g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="8.997444" FontIsBold="True" FontIsItalic="True"
+                    ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_3">Next</g>
+                <ept id="span_3" />
+                <bpt ctype="x-style" id="span_4">&lt;Style FontSize="8.997444" FontIsItalic="True"
+                    ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_4"> to continue.</g>
+                <ept id="span_4" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6btvbR8u8JT" datatype="plaintext">
+                <source>Thank You</source>
+            </trans-unit><trans-unit id="6lhdJRAgOPv.Name" datatype="plaintext">
+                <source>Management of Shortness of Breath</source>
+            </trans-unit><trans-unit id="5wI1eogFGg1" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="15" FontIsBold="False" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">National Health Systems Resource Centre</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6YEb1H6XkUa" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="21" FontIsBold="True" ForegroundColor="#F16726"
+                    LinkColor="#F16726" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Management of Shortness of Breath</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6jAUclnxXU1" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_2">Click </g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" FontIsBold="True" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_3">START</g>
+                <ept id="span_3" />
+                <bpt ctype="x-style" id="span_4">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_4"> to launch the course.</g>
+                <ept id="span_4" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6eD0dtGuQUE" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="dk1,00" LinkColor="dk1,00" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_2">START</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6oKpiyg0Xwx" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_2">START</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5xLbx56cvBc" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </bpt>
+                <g ctype="x-text" id="text_2">Course Duration: 20 Minutes</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="60rPciwBe5P.Name" datatype="plaintext">
+                <source>Splash</source>
+            </trans-unit><trans-unit id="60rPciwBe5P.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Welcome to the course on Management of Shortness of Breath.
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Click Start to begin.</g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                </source>
+            </trans-unit><trans-unit id="6Jn71wBQqDE" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">By the end of this course, you will be able to:</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5qXwPNBWJgH" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Course Objectives</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6Zw7CcPljKc" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" ForegroundColor="#FFFFFF" LinkColor="#FFFFFF"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Understand shortness of breath as a medical emergency requiring immediate
+                    intervention</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6MM6yZUmUZy" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" ForegroundColor="#FFFFFF" LinkColor="#FFFFFF"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Conduct initial investigations to determine the appropriate line of
+                    treatment, whether cardiac or respiratory</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5xPd2M57nyy.Name" datatype="plaintext">
+                <source>Course Objectives</source>
+            </trans-unit><trans-unit id="5xPd2M57nyy.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Plain" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">By the end of this course, you will be able to:
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">Understand shortness of breath as a medical emergency requiring immediate
+                    intervention and
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Conduct initial investigations to determine the appropriate line of
+                    treatment, whether cardiac or respiratory
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <ept id="block_9" />
+                </source>
+            </trans-unit><trans-unit id="65THksOAcNJ" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Introduction to Shortness of Breath</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5xIv9379lyt.Name" datatype="plaintext">
+                <source>Introduction to Shortness of Breath</source>
+            </trans-unit><trans-unit id="5xIv9379lyt.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Sumit: I… can’t breathe.
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">Wife: Sumit, are you okay?
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Mr. Bhandari: I couldn’t help but notice that your husband looks a bit out
+                    of breath. Is everything alright?
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_11">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_11">Wife: I’m not sure, Mr. Bhandari. He seemed fine earlier, but now he’s
+                    struggling to catch his breath. I’m a bit worried.
+                </g>
+                <ept id="span_11" />
+                <ept id="block_9" />
+                <bpt ctype="x-block" id="block_12" />
+                <ph id="generic_13">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_14">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_14">Mr. Bhandari: I know he may not want to make a fuss, but it’s better to
+                    be cautious. Sometimes, these things can be more serious than they look.
+                </g>
+                <ept id="span_14" />
+                <ept id="block_12" />
+                <bpt ctype="x-block" id="block_15" />
+                <ph id="generic_16">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_17">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_17">Wife: Do you think I should take him to the hospital? Because it doesn’t
+                    feel right to me.
+                </g>
+                <ept id="span_17" />
+                <ept id="block_15" />
+                <bpt ctype="x-block" id="block_18" />
+                <ph id="generic_19">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_20">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_20">Mr. Bhandari: Absolutely. When someone is breathless like this, it’s
+                    always better to let the professionals have a look, just to be safe. It could be his heart or even
+                    his lungs. It’s better to be safe.
+                </g>
+                <ept id="span_20" />
+                <ept id="block_18" />
+                <bpt ctype="x-block" id="block_21" />
+                <ph id="generic_22">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_23">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_23">Wife: You’re right. I’ll get him to the car and take him in.
+                </g>
+                <ept id="span_23" />
+                <ept id="block_21" />
+                <bpt ctype="x-block" id="block_24" />
+                <ph id="generic_25">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_26">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_26">Wife: Just hold on, Sumit. We are going to the hospital. You will be
+                    alright. Please try to breathe deep and rapidly.
+                </g>
+                <ept id="span_26" />
+                <ept id="block_24" />
+                <bpt ctype="x-block" id="block_27" />
+                <ph id="generic_28">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_29">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_29">Shortness of breath can be a sign of a life-threatening condition.
+                </g>
+                <ept id="span_29" />
+                <ept id="block_27" />
+                <bpt ctype="x-block" id="block_30" />
+                <ph id="generic_31">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_32">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_32">In such moments, quick action is critical. Call for help immediately to
+                    ensure timely medical intervention.</g>
+                <ept id="span_32" />
+                <ept id="block_30" />
+                </source>
+            </trans-unit><trans-unit id="5vTTa1n9MBd" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Emergency Department</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6FW7rxDbtzc.Name" datatype="plaintext">
+                <source>Emergency Department</source>
+            </trans-unit><trans-unit id="6FW7rxDbtzc.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">The patient is received in the triage area and his condition is assessed
+                    by the attending doctors. Based on the patient’s condition and severity he is triaged into the red
+                    zone.
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">Doctor: What happened?
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Wife: Doctor, he suddenly had difficulty in breathing. We were walking in
+                    the park when he stopped and said he couldn’t catch his breath.
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_11">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_11">Doctor: Has he experienced anything like this before?
+                </g>
+                <ept id="span_11" />
+                <ept id="block_9" />
+                <bpt ctype="x-block" id="block_12" />
+                <ph id="generic_13">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_14">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_14">Wife: No, he's never had issues with breathing before.
+                </g>
+                <ept id="span_14" />
+                <ept id="block_12" />
+                <bpt ctype="x-block" id="block_15" />
+                <ph id="generic_16">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_17">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_17">Doctor: Don’t worry, we’re going to take care of him.
+                </g>
+                <ept id="span_17" />
+                <ept id="block_15" />
+                <bpt ctype="x-block" id="block_18" />
+                <ph id="generic_19">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_20">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_20"></g>
+                <ept id="span_20" />
+                <ept id="block_18" />
+                </source>
+            </trans-unit><trans-unit id="6VMpqIy9Z75" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Triage Area</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5Zv9JHQ1bjb" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Airway, check for obstruction, stridor.</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="60GpJNS1mgS" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="40.5" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">A</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6lHWjfZ8NDg" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Red Zone</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6M7JCx4YIfA" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Breathing, see if wheezing/crepts, SpO</g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" Elevation="Subscript" /&gt;</bpt>
+                <g ctype="x-text" id="text_3">2</g>
+                <ept id="span_3" />
+                <bpt ctype="x-style" id="span_4">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_4">, oxygen therapy aimed at 94-98% oxygen saturation.</g>
+                <ept id="span_4" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5fD44Rvc5Lm" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="40.5" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">B</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6buAF02DNKi" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="40.5" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">C</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6rXE8zK6plm" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Circulation, watch for hypotension or hypertension.</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5r0ChkSQJFS" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Disability, check neurological status and responsiveness.</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6KSUeFYn1Fy" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="40.5" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">D</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5ZSU6tMiB1w" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="40.5" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">E</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6SGDdXwhF8E" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Exposure, examine for additional injuries or signs.</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5jtORiOny0n.Name" datatype="plaintext">
+                <source>Triage Area</source>
+            </trans-unit><trans-unit id="5jtORiOny0n.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">The ABCDE assessment is a systematic approach to identifying and treating
+                    life-threatening conditions.
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">A Stands for Airway, check for obstruction, stridor.
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">B for Breathing, see if wheezing or crepts, SpO</g>
+                <ept id="span_8" />
+                <bpt ctype="x-style" id="span_9">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    Elevation="Subscript" LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_9">2</g>
+                <ept id="span_9" />
+                <bpt ctype="x-style" id="span_10">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_10">, oxygen therapy aimed at 94-98% oxygen saturation.
+                </g>
+                <ept id="span_10" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_11" />
+                <ph id="generic_12">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_13">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_13">C for Circulation, watch for hypotension or hypertension.
+                </g>
+                <ept id="span_13" />
+                <ept id="block_11" />
+                <bpt ctype="x-block" id="block_14" />
+                <ph id="generic_15">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_16">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_16">D for Disability, check neurological status and responsiveness.
+                </g>
+                <ept id="span_16" />
+                <ept id="block_14" />
+                <bpt ctype="x-block" id="block_17" />
+                <ph id="generic_18">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_19">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_19">and E for Exposure, examine for additional injuries or signs.
+                </g>
+                <ept id="span_19" />
+                <ept id="block_17" />
+                <bpt ctype="x-block" id="block_20" />
+                <ph id="generic_21">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_22">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_22"></g>
+                <ept id="span_22" />
+                <ept id="block_20" />
+                </source>
+            </trans-unit><trans-unit id="69Es5Pj82Yb" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Initial Investigations</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6NjpJGLa01T" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="#000000"
+                    LinkColor="#000000" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Structural brain lesion</g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" ForegroundColor="#000000" LinkColor="#000000"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_3">: Brain trauma,
+                </g>
+                <ept id="span_3" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_4" />
+                <ph id="generic_5">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_6">&lt;Style FontSize="12" ForegroundColor="#000000" LinkColor="#000000"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_6">Brain tumor or abscess, Stroke, Hemorrhage</g>
+                <ept id="span_6" />
+                <ept id="block_4" />
+                </source>
+            </trans-unit><trans-unit id="6C32zc3WbPJ" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" ForegroundColor="#000000"
+                    LinkColor="#000000" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">ECG, Chest X-ray, Point of Care USG (POCUS)</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6Lx3wVDg5kh" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="#000000"
+                    LinkColor="#000000" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Structural brain lesion</g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" ForegroundColor="#000000" LinkColor="#000000"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_3">: Brain trauma,
+                </g>
+                <ept id="span_3" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_4" />
+                <ph id="generic_5">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_6">&lt;Style FontSize="12" ForegroundColor="#000000" LinkColor="#000000"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_6">Brain tumor or abscess, Stroke, Hemorrhage</g>
+                <ept id="span_6" />
+                <ept id="block_4" />
+                </source>
+            </trans-unit><trans-unit id="6kLiDuVarXh" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style Justification="Left" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" ForegroundColor="#000000"
+                    LinkColor="#000000" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Consider CBC, RBS, ABG/VBG, Urea, Creatinine, Electrolytes, TROP-I,
+                    D-dimer, NT ProBNP</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5dwEpiJJGOc.Name" datatype="plaintext">
+                <source>Initial Investigations</source>
+            </trans-unit><trans-unit id="5dwEpiJJGOc.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Conduct a focused history and relevant examination.
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Based on the initial findings, proceed with diagnostic tests such as an
+                    ECG, Chest X-ray, and Point of Care Ultrasound (POCUS) to evaluate further.
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_11">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_11">
+                </g>
+                <ept id="span_11" />
+                <ept id="block_9" />
+                <bpt ctype="x-block" id="block_12" />
+                <ph id="generic_13">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_14">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_14">Additionally, consider conducting laboratory tests like a Complete Blood
+                    Count, Random Blood Sugar, Arterial or Venous Blood Gas, Urea, Creatinine, Electrolytes, Troponin I,
+                    D-dimer, and NT-proBNP to provide a comprehensive analysis of the patient's health status.
+                </g>
+                <ept id="span_14" />
+                <ept id="block_12" />
+                <bpt ctype="x-block" id="block_15" />
+                <ph id="generic_16">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <ept id="block_15" />
+                </source>
+            </trans-unit><trans-unit id="62u8M84q5DT" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Line of Treatment for Shortness of Breath</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5ZNkiAgfq6w" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="144" FirstLineMargin="144" Justification="Left"
+                    DefaultTabStop="69.8181839" ListLevel="4" LineSpacing="20"&gt;&lt;ListStyle ListType="None"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="#000000"
+                    LinkColor="#000000" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Cardiac</g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" ForegroundColor="#000000" LinkColor="#000000"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_3">: Manage as per Pulmonary Oedema Protocol</g>
+                <ept id="span_3" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5t6RXBYDgwy" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="36" FirstLineMargin="36" Justification="Left"
+                    DefaultTabStop="69.8181839" ListLevel="1" LineSpacing="20"&gt;&lt;ListStyle ListType="None"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="Open Sans" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#FFFFFF" LinkColor="#FFFFFF" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Respiratory</g>
+                <ept id="span_2" />
+                <bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" ForegroundColor="#FFFFFF" LinkColor="#FFFFFF"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_3">: Manage as per Asthma
+                </g>
+                <ept id="span_3" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_4" />
+                <ph id="generic_5">&lt;Style LeadingMargin="36" FirstLineMargin="36" Justification="Left"
+                    DefaultTabStop="69.8181839" ListLevel="1" LineSpacing="20"&gt;&lt;ListStyle ListType="None"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_6">&lt;Style FontSize="12" ForegroundColor="#FFFFFF" LinkColor="#FFFFFF"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_6">or COPD Protocol</g>
+                <ept id="span_6" />
+                <ept id="block_4" />
+                </source>
+            </trans-unit><trans-unit id="6d2budm03pm" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#FFFFFF"
+                    BulletFont="Arial" /&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="10.5" ForegroundColor="dk1,00" LinkColor="dk1,00"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_2">These three emergency medical conditions are covered in the subsequent
+                    modules.</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6aT8WZoQICY.Name" datatype="plaintext">
+                <source>Line of Treatment for Shortness of Breath</source>
+            </trans-unit><trans-unit id="6aT8WZoQICY.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Shortness of breath can have the following reasons:&#xD;
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">If the cause is cardiac, manage the condition according to the Pulmonary
+                    Oedema Protocol.
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">If the cause is respiratory, manage the condition according to the asthma
+                    or the Chronic Obstructive Pulmonary Disease Protocol.
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="27" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_11">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_11">
+                </g>
+                <ept id="span_11" />
+                <ept id="block_9" />
+                <bpt ctype="x-block" id="block_12" />
+                <ph id="generic_13">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_14">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_14">These three emergency medical conditions are covered in the subsequent
+                    modules.
+                </g>
+                <ept id="span_14" />
+                <ept id="block_12" />
+                <bpt ctype="x-block" id="block_15" />
+                <ph id="generic_16">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <ept id="block_15" />
+                </source>
+            </trans-unit><trans-unit id="6VIiuHeIUoo" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">In this course, we have:</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="5WioMlaLCLp" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" ForegroundColor="lt1,00" LinkColor="lt1,00"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Learned that shortness of breath is a medical emergency requiring
+                    immediate intervention</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6PZulMXFUH2" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">01</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6VZWqpVUEjw" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" ForegroundColor="lt1,00" LinkColor="lt1,00"
+                    /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Discussed the initial investigations needed to determine the appropriate
+                    line of treatment, whether cardiac or respiratory</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6PzGMIyV9OQ" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Center"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="True" ForegroundColor="lt1,00"
+                    LinkColor="lt1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">02</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="63lycsX7CPH" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" LineSpacing="20" /&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Summary</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6ezipwZ5KXe.Name" datatype="plaintext">
+                <source>Summary</source>
+            </trans-unit><trans-unit id="6ezipwZ5KXe.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">In this course, we have:
+                </g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                <bpt ctype="x-block" id="block_3" />
+                <ph id="generic_4">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_5">&lt;Style FontFamily="+minor" FontSize="10" FontIsBold="True"
+                    ForegroundColor="dk1,00" LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_5">
+                </g>
+                <ept id="span_5" />
+                <ept id="block_3" />
+                <bpt ctype="x-block" id="block_6" />
+                <ph id="generic_7">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" Color="#000000"
+                    BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+                    /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_8">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_8">Learned that shortness of breath is a medical emergency requiring
+                    immediate intervention and
+                </g>
+                <ept id="span_8" />
+                <ept id="block_6" />
+                <bpt ctype="x-block" id="block_9" />
+                <ph id="generic_10">&lt;Style FlowDirection="LeftToRight" LeadingMargin="15" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="Bullet" ListTypeFormat="Plain" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_11">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_11">Discussed the initial investigations needed to determine the appropriate
+                    line of treatment, whether cardiac or respiratory
+                </g>
+                <ept id="span_11" />
+                <ept id="block_9" />
+                <bpt ctype="x-block" id="block_12" />
+                <ph id="generic_13">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <ept id="block_12" />
+                </source>
+            </trans-unit><trans-unit id="5bj1i4fw2nC" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" DefaultTabStop="69.8181839"
+                    LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontSize="22.5" FontIsBold="True" ForegroundColor="#EB642E"
+                    LinkColor="#EB642E" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Thank you for watching!</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="6AgS2H5hNiP.Name" datatype="plaintext">
+                <source>Thank You</source>
+            </trans-unit><trans-unit id="6AgS2H5hNiP.Note" xml:space="preserve" datatype="x-DocumentState">
+                <source>
+                <bpt ctype="x-block" id="block_0" />
+                <ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" LineSpacingRule="Single" LineSpacing="20" SpacingBefore="0"
+                    SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Parentheses" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ph>
+                <bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="10" ForegroundColor="dk1,00"
+                    LinkColor="dk1,00" /&gt;</bpt>
+                <g ctype="x-text" id="text_2">Thank you for watching!</g>
+                <ept id="span_2" />
+                <ept id="block_0" />
+                </source>
+            </trans-unit><trans-unit id="ProjectTitle.Title" datatype="plaintext">
+                <source>Management of Shortness of Breath</source>
+            </trans-unit><trans-unit id="FrameLink.67rHo5v7rLc.Link" datatype="plaintext">
+                <source>Home</source>
+            </trans-unit><trans-unit id="FrameLink.6Pyi3fg7Q0J.Link" datatype="plaintext">
+                <source>Exit</source>
+            </trans-unit><trans-unit id="Resources.Description" datatype="plaintext">
+                <source>Here are some useful links and documents:</source>
+            </trans-unit></body>
+    </file>
+</xliff>

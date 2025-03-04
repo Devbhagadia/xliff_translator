@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:xliff xmlns:ns0="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <ns0:file source-language="en" target-language="zh-cn" datatype="plaintext" original="messages">
+        <ns0:header>
+            <ns0:note>Sample XLIFF file with all possible tags<ns0:target /></ns0:note>
+        </ns0:header>
+
+        <ns0:body>
+
+            <ns0:trans-unit id="6YEb1H6XkUa" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="21" FontIsBold="True" ForegroundColor="#F16726"
+                    LinkColor="#F16726" /&gt;</ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">Management of Shortness of Breath</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style LeadingMargin="0" FirstLineMargin="0" Justification="Left"
+                    DefaultTabStop="69.8181839" LineSpacing="20"&gt;&lt;ListStyle ListType="None" BulletChar="•"
+                    BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0" /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="21" FontIsBold="True" ForegroundColor="#F16726"
+                    LinkColor="#F16726" /&gt;</ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">सांस की तकलीफ का प्रबंधन</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit><ns0:trans-unit id="6jAUclnxXU1" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">Click </ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" FontIsBold="True" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_3">START</ns0:g>
+                <ns0:ept id="span_3" />
+                <ns0:bpt ctype="x-style" id="span_4">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_4"> to launch the course.</ns0:g>
+                <ns0:ept id="span_4" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">क्लिक</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:bpt ctype="x-style" id="span_3">&lt;Style FontSize="12" FontIsBold="True" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_3">शुरू</ns0:g>
+                <ns0:ept id="span_3" />
+                <ns0:bpt ctype="x-style" id="span_4">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="True"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_4">पाठ्यक्रम लॉन्च करने के लिए।</ns0:g>
+                <ns0:ept id="span_4" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit><ns0:trans-unit id="6eD0dtGuQUE" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="dk1,00" LinkColor="dk1,00" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">START</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="dk1,00" LinkColor="dk1,00" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">शुरू</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit><ns0:trans-unit id="6oKpiyg0Xwx" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">START</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="9.75" FontIsBold="True" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="lt1,00" LinkColor="lt1,00" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">शुरू</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit><ns0:trans-unit id="5xLbx56cvBc" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">Course Duration: 20 Minutes</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+                    FirstLineMargin="0" Justification="Left" DefaultTabStop="69.8181839" LineSpacingRule="Single"
+                    LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None"
+                    ListTypeFormat="Parentheses" BulletFont="Arial" /&gt;&lt;/Style&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontSize="12" FontIsBold="False" FontIsItalic="False"
+                    FontIsUnderline="False" FontIsStrikeout="False" ForegroundColor="#264EA1" LinkColor="#264EA1" /&gt;
+                </ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">पाठ्यक्रम की अवधि: 20 मिनट</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit>
+
+          <ns0:trans-unit id="12">
+                <ns0:source>
+                    This application provides a seamless shopping experience with a secure checkout process.
+                </ns0:source>
+              
+            <ns0:target><ns0:text>यह एप्लिकेशन एक सुरक्षित चेकआउट प्रक्रिया के साथ एक सहज खरीदारी का अनुभव प्रदान करता है।</ns0:text></ns0:target></ns0:trans-unit>
+
+            <ns0:trans-unit id="5qXOCdDTnuv" xml:space="preserve" datatype="x-DocumentState">
+                <ns0:source>
+                <ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" /&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">%slide_name%</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:source>
+            <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+                <ns0:ph id="generic_1">&lt;Style DefaultTabStop="69.8181839" /&gt;</ns0:ph>
+                <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontFamily="+minor" FontSize="12" FontIsBold="True"
+                    ForegroundColor="#0068B7" LinkColor="#0068B7" /&gt;</ns0:bpt>
+                <ns0:g ctype="x-text" id="text_2">%slide_name%</ns0:g>
+                <ns0:ept id="span_2" />
+                <ns0:ept id="block_0" />
+                </ns0:target></ns0:trans-unit>
+
+            <ns0:trans-unit id="6Y3HlZ1CNuA" xml:space="preserve" datatype="x-DocumentState">
+        <ns0:source>
+        <ns0:bpt ctype="x-block" id="block_0" />
+        <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+          FirstLineMargin="0" Justification="Left" DefaultTabStop="64" ListLevel="0" LineSpacingRule="Single"
+          LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Period"
+          Start="0" Color="#000000" Size="100" BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+          /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ns0:ph>
+        <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontFamily="Roboto Light" FontSize="14" FontIsBold="True"
+          FontIsItalic="False" FontIsUnderline="False" FontIsStrikeout="False" UnderlineStyle="Normal"
+          ForegroundColor="dk1,00" BackgroundColor="#000000,00" UnderlineColor="#000000,00" Elevation="Normal"
+          Spacing="0" IgnoreKerningTable="False" DisplayCase="AsIs" LanguageId="0" LinkColor="dk1,00"&gt;
+          &lt;Shadow Offset="0x0" Color="#FFFFFF,00" /&gt;
+          &lt;/Style&gt;</ns0:bpt>
+        <ns0:g ctype="x-text" id="text_2">You identified correctly %combinedans% of the 2 key messages on sexually %dev bhai%
+          transmitted infections (STIs).</ns0:g>
+        <ns0:ept id="span_2" />
+        <ns0:ept id="block_0" />
+        </ns0:source>
+      <ns0:target><ns0:bpt ctype="x-block" id="block_0" />
+        <ns0:ph id="generic_1">&lt;Style FlowDirection="LeftToRight" LeadingMargin="0" TrailingMargin="0"
+          FirstLineMargin="0" Justification="Left" DefaultTabStop="64" ListLevel="0" LineSpacingRule="Single"
+          LineSpacing="20" SpacingBefore="0" SpacingAfter="0"&gt;&lt;ListStyle ListType="None" ListTypeFormat="Period"
+          Start="0" Color="#000000" Size="100" BulletChar="•" BulletFont="Arial"&gt;&lt;BulletPicture Size="0x0"
+          /&gt;&lt;/ListStyle&gt;&lt;/Style&gt;</ns0:ph>
+        <ns0:bpt ctype="x-style" id="span_2">&lt;Style FontFamily="Roboto Light" FontSize="14" FontIsBold="True"
+          FontIsItalic="False" FontIsUnderline="False" FontIsStrikeout="False" UnderlineStyle="Normal"
+          ForegroundColor="dk1,00" BackgroundColor="#000000,00" UnderlineColor="#000000,00" Elevation="Normal"
+          Spacing="0" IgnoreKerningTable="False" DisplayCase="AsIs" LanguageId="0" LinkColor="dk1,00"&gt;
+          &lt;Shadow Offset="0x0" Color="#FFFFFF,00" /&gt;
+          &lt;/Style&gt;</ns0:bpt>
+        <ns0:g ctype="x-text" id="text_2">आप पहचान की सही ढंग से %combinedans% का  2 चाबी संदेशों पर यौन %dev bhai% संचारित संक्रमणों (एसटीआई)।</ns0:g>
+        <ns0:ept id="span_2" />
+        <ns0:ept id="block_0" />
+        </ns0:target></ns0:trans-unit>
+
+
+        </ns0:body>
+    </ns0:file>
+</ns0:xliff>

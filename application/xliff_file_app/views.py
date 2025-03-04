@@ -80,53 +80,40 @@ def upload_xliff(request):
         cache.set("progress", 0, timeout=600)
         cache.set("translation_complete", False, timeout=600)
         print("DEBUG: Progress reset to 0% before upload")
+
         xliff_file = request.FILES["xliff_file"]
-        if not xliff_file.name.endswith(".xlf") and not xliff_file.name.endswith(".xliff"):
+        if not xliff_file.name.endswith((".xlf", ".xliff")):
             return HttpResponse("Invalid file format. Please upload an XLIFF file.", status=400)
-        
-        file_path = os.path.join(settings.MEDIA_ROOT, "xliff_files", xliff_file.name)
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        # full_path = os.path.join(default_storage.location, file_path)
-        # print(f"DEBUG: File saved at {full_path}")
-        with open(file_path, "wb") as f:
-            for chunk in xliff_file.chunks():
-                f.write(chunk)
+
+        # ✅ Save uploaded file
+        file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
+        full_path = os.path.join(default_storage.location, file_path)
+        print(f"DEBUG: File saved at {full_path}")
 
         cache.set("progress", 10, timeout=600)
-        cache.set("translation_complete", False, timeout=600)
-        print("DEBUG: Progress set to 100% and translation_complete reset")
+        print("DEBUG: Progress set to 10%")
 
         try:
-            #  Start progress at 10%
-            cache.set("progress", 10, timeout=600)
-            print("DEBUG: Progress set to 10%")
-
-            #  Run script in unbuffered mode for real-time output
+            # ✅ Run script and capture output
             process = subprocess.Popen(
-                ["python", "-u", "script4.py", file_path],  
+                ["python3", "-u", "script4.py", full_path],  
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                bufsize=1,  # Line-buffered
+                bufsize=1,
                 encoding="utf-8",
                 errors="replace"
             )
 
-            #  Use a queue for async reading
             q = queue.Queue()
             t = threading.Thread(target=enqueue_output, args=(process.stdout, q))
             t.daemon = True
             t.start()
 
-            translations = []
-            translated_file_path = None  
-            merged_lines = []  #  Preserve merged line logic
-            current_line = ""
-            current_progress = 20  
+            translated_content = []  # ✅ Instead of file path, store translated text
             translation_started = False
 
-            #  Read process output in real-time
-            while process.poll() is None:  # While process is running
+            while process.poll() is None:
                 while not q.empty():
                     line = q.get()
                     print(f"DEBUG: Script Output: {line}")
@@ -134,7 +121,6 @@ def upload_xliff(request):
                     if "TEXT" in line:
                         translation_started = True
 
-                    #  Handle progress updates
                     if "TRANSLATION_PROGRESS:" in line:
                         try:
                             _, progress_value = line.split("TRANSLATION_PROGRESS: ")
@@ -144,71 +130,29 @@ def upload_xliff(request):
                         except ValueError:
                             print(f"WARNING: Invalid progress format: {line}")
 
-                    #  Handle merging logic for multi-line translations
+                    # ✅ Store translation directly from script output
                     if "TRANSLATION_OUTPUT:" in line:
-                        if current_line:
-                            merged_lines.append(current_line.strip())  #  Save previous merged line
-                        current_line = line.strip()
+                        _, content = line.split("TRANSLATION_OUTPUT: ", 1)
+                        translated_content.append(content.strip())
 
-                        #  Update progress dynamically
-                        cache.set("progress", min(current_progress, 90), timeout=600)
-                        print(f"DEBUG: Progress updated to {cache.get('progress')}")
-                        current_progress += 7  
-                    else:
-                        current_line += " " + line.strip()
-
-                    #  Extract translated file path
-                    if "Translated file saved:" in line:
-                        _, translated_file_path = line.split("Translated file saved: ", 1)
-                        translated_file_path = translated_file_path.strip()
-
-            #  Ensure last translation is captured
-            if current_line:
-                merged_lines.append(current_line.strip())
-
-            process.wait()  # Ensure process is fully completed
+            process.wait()
 
             if translation_started:
                 cache.set("progress", 100, timeout=600)
                 print("DEBUG: Progress set to 100% after translation")
 
-            #  Ensure progress reaches 100%
             cache.set("progress", 100, timeout=600)
-            print("DEBUG: Progress set to 100%")
-            
-            
 
-            #  Process merged translations
-            for line in merged_lines:
-                if "TRANSLATION_OUTPUT:" in line:
-                    try:
-                        _, content = line.split("TRANSLATION_OUTPUT: ", 1)
-                        parts = content.split("|||")
+            if not translated_content:
+                print(f"ERROR: No translation content received!")
+                return JsonResponse({"error": "Translation failed, no output received."}, status=500)
 
-                        if len(parts) == 2:
-                            src, tgt = parts
-                            translations.append({"source": src.strip(), "target": tgt.strip()})
-                        else:
-                            print(f"WARNING: Skipping invalid translation line: {line}")
-                    except Exception as e:
-                        print(f"ERROR: Issue processing line '{line}': {e}")
-
-            print(f"DEBUG: Extracted translated_file_path: {translated_file_path}")
-
-
-            if not translated_file_path or not os.path.exists(translated_file_path):
-                print(f"ERROR: Translated file path is missing! Checked path: {translated_file_path}")
-                return JsonResponse({"error": "Translation failed, file not found."}, status=500)
-
-            translated_file_name = os.path.basename(translated_file_path)
-            translated_file_url = f"{settings.MEDIA_URL}xliff_files/{quote(translated_file_name)}"
-
-            print(f"DEBUG: Translated file URL - {translated_file_url}")
-            return JsonResponse({"translated_file_url": translated_file_url})
+            return JsonResponse({"translated_text": translated_content})
 
         except Exception as e:
             return HttpResponse(f"Error processing XLIFF file: {e}")
-
+        
+        
 def save_edits(request):
     if request.method == "POST":
         translated_texts = request.POST.getlist("translated_text[]")

@@ -145,38 +145,41 @@
 
         // ✅ Enable Editing on Click
         function enableEditing() {
-            let editBtn = document.createElement("button");
-            editBtn.id = "editBtn";
-            editBtn.classList.add("btn", "btn-warning");
-            editBtn.innerText = "Edit";
-            editBtn.addEventListener("click", function() {
-                document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
-                saveBtn.style.display = "inline-block";
-                editBtn.style.display = "none";
-            });
+    let editBtn = document.createElement("button");
+    editBtn.id = "editBtn";
+    editBtn.classList.add("btn", "btn-warning");
+    editBtn.innerText = "Edit";
+    editBtn.addEventListener("click", function() {
+        document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
+        saveBtn.style.display = "inline-block";
+        editBtn.style.display = "none";
+    });
 
-            let saveBtn = document.createElement("button");
-            saveBtn.id = "saveBtn";
-            saveBtn.classList.add("btn", "btn-success");
-            saveBtn.innerText = "Save Changes";
-            saveBtn.style.display = "none";
+    let saveBtn = document.createElement("button");
+    saveBtn.id = "saveBtn";
+    saveBtn.classList.add("btn", "btn-success");
+    saveBtn.innerText = "Save Changes";
+    saveBtn.style.display = "none";  // Initially hidden
 
-            let actionDiv = document.createElement("div");
-            actionDiv.id = "actions";
-            actionDiv.classList.add("button-container");
-            actionDiv.appendChild(editBtn);
+    let actionDiv = document.createElement("div");
+    actionDiv.id = "actions";
+    actionDiv.classList.add("button-container");
 
-            // ✅ Adding the download button
-            let downloadLink = document.createElement("a");
-            downloadLink.id = "downloadLink";
-            downloadLink.classList.add("btn", "btn-success");
-            downloadLink.innerText = "Download Translated File";
-            downloadLink.setAttribute("download", "");
-            downloadLink.style.display = "none";  // Hide initially
+    actionDiv.appendChild(editBtn);
+    actionDiv.appendChild(saveBtn);  // ✅ FIX: Add Save Changes button here!
 
-            actionDiv.appendChild(downloadLink);
-            document.querySelector(".container").appendChild(actionDiv);
-        }
+    // ✅ Adding the download button
+    let downloadLink = document.createElement("a");
+    downloadLink.id = "downloadLink";
+    downloadLink.classList.add("btn", "btn-success");
+    downloadLink.innerText = "Download Translated File";
+    downloadLink.setAttribute("download", "");
+    downloadLink.style.display = "none";  // Hide initially
+
+    actionDiv.appendChild(downloadLink);
+
+    document.querySelector(".container").appendChild(actionDiv);
+}
 
         // ✅ Enable Download Button
         function enableDownload(translatedFileName) {

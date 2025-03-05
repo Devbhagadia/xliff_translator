@@ -46,89 +46,121 @@
             </div>
         </form>
 
-        {% if translations %}
-        <div class="mt-4">
-            <h4 class="text-center">Translation Preview</h4>
-            
-            <!-- ✅ Edit Form -->
-            <form id="editForm" action="{% url 'save_edits' %}" method="POST">
-                {% csrf_token %}
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>Original Text</th>
-                                <th>Translated Text (Editable)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for pair in translations %}
-                            <tr>
-                                <td>{{ pair.source }}</td>
-                                <td>
-                                    <input type="text" name="translated_text[]" class="form-control edit-field" value="{{ pair.target }}" disabled>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ✅ Action Buttons -->
-                <div id="actions" class="mt-4 text-center">
-                    <button type="button" id="editBtn" class="btn btn-warning">Edit</button>
-                    <button type="submit" id="saveBtn" class="btn btn-success" style="display: none;">Save Changes</button>
-                    
-                    {% if translated_file_name %}
-                        <a href="{% url 'download_file' file_name=translated_file_name %}" class="btn btn-success">Download</a>
-                    {% endif %}
-                </div>
-            </form>
-        </div>
-        {% endif %}
+        <!-- ✅ Translations will be inserted dynamically here -->
+        <div id="translations"></div>
     </div>
 
-    <!-- ✅ JavaScript for Progress Bar -->
+    <!-- ✅ JavaScript for Upload, Progress & Translation Handling -->
     <script>
-        document.getElementById("uploadForm").addEventListener("submit", function() {
-        document.getElementById("translateBtn").style.display = "none";  
-        document.getElementById("loader").style.display = "block";  
-        document.getElementById("progress-container").style.display = "block"; 
-        checkProgress();  // ✅ Start checking progress
-    });
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // ✅ Prevent default form submission
+            
+            let formData = new FormData(this);
+            let translateBtn = document.getElementById("translateBtn");
+            let loader = document.getElementById("loader");
+            let progressContainer = document.getElementById("progress-container");
 
-function checkProgress() {
-    fetch("/check-progress/")
-        .then(response => response.json())
-        .then(data => {
-            console.log("DEBUG Progress:", data.progress, "Translation Complete:", data.translation_complete); // ✅ Log both values
+            translateBtn.style.display = "none";  
+            loader.style.display = "block";  
+            progressContainer.style.display = "block";  
 
-            const progressBar = document.getElementById("progress-bar");
-            const progressText = document.getElementById("progress-text");
+            fetch("{% url 'upload_xliff' %}", {  // ✅ Send file to Django backend
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                    translateBtn.style.display = "block";  
+                    loader.style.display = "none";  
+                    return;
+                }
 
-            if (progressBar && progressText) { 
-                progressBar.style.width = data.progress + "%";
-                progressText.innerText = data.progress + "%";
-            }
-
-            if (data.progress < 100 || !data.translation_complete) {  // ✅ Ensure full completion
-                setTimeout(checkProgress, 1000);
-            } else {
-                document.getElementById("loader").innerHTML = "<p> Translation Complete! Displaying the translated texts now...</p>";
-                document.getElementById("translateBtn").style.display = "block";
-                showTranslatedTexts();  // ✅ Ensure translated text appears
-            }
-        })
-        .catch(error => console.error("Error fetching progress:", error));
-}
-
-
-        // Enable editing when "Edit" button is clicked
-        document.getElementById("editBtn").addEventListener("click", function() {
-            document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
-            document.getElementById("saveBtn").style.display = "inline-block"; // Show Save button
-            document.getElementById("editBtn").style.display = "none"; // Hide Edit button
+                showTranslatedTexts(data.translations);  // ✅ Display translations dynamically
+            })
+            .catch(error => console.error("Upload error:", error));
         });
+
+        // ✅ Function to display translations dynamically
+        function showTranslatedTexts(translations) {
+            let translationContainer = document.createElement("div");
+            translationContainer.id = "translations";
+            translationContainer.classList.add("mt-4");
+
+            let heading = document.createElement("h4");
+            heading.classList.add("text-center");
+            heading.innerText = "Translation Preview";
+            translationContainer.appendChild(heading);
+
+            let table = document.createElement("table");
+            table.classList.add("table", "table-bordered");
+
+            let thead = document.createElement("thead");
+            thead.classList.add("table-dark");
+            thead.innerHTML = "<tr><th>Original Text</th><th>Translated Text (Editable)</th></tr>";
+            table.appendChild(thead);
+
+            let tbody = document.createElement("tbody");
+            
+            translations.forEach(entry => {
+                let row = document.createElement("tr");
+
+                let originalCell = document.createElement("td");
+                originalCell.innerText = entry.original;
+
+                let translatedCell = document.createElement("td");
+                let input = document.createElement("input");
+                input.type = "text";
+                input.name = "translated_text[]";
+                input.classList.add("form-control", "edit-field");
+                input.value = entry.translated;
+                input.setAttribute("disabled", true);  
+
+                translatedCell.appendChild(input);
+                row.appendChild(originalCell);
+                row.appendChild(translatedCell);
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(tbody);
+            translationContainer.appendChild(table);
+
+            // ✅ Remove old table and append the new one
+            let oldContainer = document.getElementById("translations");
+            if (oldContainer) oldContainer.remove();
+
+            document.querySelector(".container").appendChild(translationContainer);
+
+            enableEditing();  // ✅ Enable edit/save buttons dynamically
+        }
+
+        // ✅ Enable Editing on Click
+        function enableEditing() {
+            let editBtn = document.createElement("button");
+            editBtn.id = "editBtn";
+            editBtn.classList.add("btn", "btn-warning");
+            editBtn.innerText = "Edit";
+            editBtn.addEventListener("click", function() {
+                document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
+                saveBtn.style.display = "inline-block";
+                editBtn.style.display = "none";
+            });
+
+            let saveBtn = document.createElement("button");
+            saveBtn.id = "saveBtn";
+            saveBtn.classList.add("btn", "btn-success");
+            saveBtn.innerText = "Save Changes";
+            saveBtn.style.display = "none";
+
+            let actionDiv = document.createElement("div");
+            actionDiv.id = "actions";
+            actionDiv.classList.add("mt-4", "text-center");
+            actionDiv.appendChild(editBtn);
+            actionDiv.appendChild(saveBtn);
+
+            document.querySelector(".container").appendChild(actionDiv);
+        }
     </script>
 </body>
 </html>

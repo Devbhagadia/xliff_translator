@@ -137,6 +137,7 @@ def upload_xliff(request):
 
             # ✅ Parse JSON safely
             script_data = json.loads(script_output)
+            request.session["translated_data"] = script_data
 
             cache.set("progress", 100, timeout=600)  # ✅ Translation completed
 

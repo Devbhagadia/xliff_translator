@@ -49,7 +49,7 @@ def check_progress(request):
             cache.set("progress", 100, timeout=600)
             translation_complete = True  # ✅ Ensure it's updated
         else:
-            translation_complete = True  # ✅ Explicitly return False
+            translation_complete = False  # ✅ Explicitly return False
 
     log_debug(f"Returning progress: {progress}, Translation Complete: {translation_complete}")  
 

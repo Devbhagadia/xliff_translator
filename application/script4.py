@@ -12,7 +12,7 @@ import copy
 import re
 import sys
 import time
-from django.core.cache import cache
+# from django.core.cache import cache
 
 sys.stdout.reconfigure(encoding="utf-8")  # ✅ Force UTF-8 output
 
@@ -211,5 +211,5 @@ response_data = {
 
 sys.stdout.write(json.dumps(response_data, ensure_ascii=False) + "\n")
 sys.stdout.flush()
-cache.set("progress", 100, timeout=600)
-cache.set("translation_complete", True, timeout=600)
+# cache.set("progress", 100, timeout=600)
+# cache.set("translation_complete", True, timeout=600)

@@ -13,7 +13,7 @@
             height: 20px;
             border-radius: 5px;
             margin-top: 10px;
-            display: none; /* Hidden initially */
+            display: none;
         }
         #progress-bar {
             height: 100%;
@@ -48,6 +48,11 @@
 
         <!-- ✅ Translations will be inserted dynamically here -->
         <div id="translations"></div>
+
+        <!-- ✅ Download Translated File -->
+        <div id="download-container" class="text-center mt-4" style="display: none;">
+            <a id="downloadLink" class="btn btn-success" download>Download Translated File</a>
+        </div>
     </div>
 
     <!-- ✅ JavaScript for Upload, Progress & Translation Handling -->
@@ -77,13 +82,13 @@
                     return;
                 }
 
-                showTranslatedTexts(data.translations);  // ✅ Display translations dynamically
+                showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
             })
             .catch(error => console.error("Upload error:", error));
         });
 
         // ✅ Function to display translations dynamically
-        function showTranslatedTexts(translations) {
+        function showTranslatedTexts(translations, translatedFileName) {
             let translationContainer = document.createElement("div");
             translationContainer.id = "translations";
             translationContainer.classList.add("mt-4");
@@ -133,6 +138,7 @@
             document.querySelector(".container").appendChild(translationContainer);
 
             enableEditing();  // ✅ Enable edit/save buttons dynamically
+            enableDownload(translatedFileName);  // ✅ Enable download button
         }
 
         // ✅ Enable Editing on Click
@@ -160,6 +166,19 @@
             actionDiv.appendChild(saveBtn);
 
             document.querySelector(".container").appendChild(actionDiv);
+        }
+
+        // ✅ Enable Download Button
+        function enableDownload(translatedFileName) {
+            let downloadContainer = document.getElementById("download-container");
+            let downloadLink = document.getElementById("downloadLink");
+
+            if (translatedFileName) {
+                downloadLink.href = `/download/${translatedFileName}/`;  // ✅ Set correct file path
+                downloadContainer.style.display = "block";  // ✅ Show the button
+            } else {
+                downloadContainer.style.display = "none";  // Hide if no file available
+            }
         }
     </script>
 </body>

@@ -86,16 +86,19 @@ def upload_xliff(request):
 
         xliff_file = request.FILES["xliff_file"]
         if not xliff_file.name.endswith((".xlf", ".xliff")):
-            return HttpResponse("Invalid file format. Please upload an XLIFF file.", status=400)
+            return JsonResponse({"error": "Invalid file format. Please upload an XLIFF file."}, status=400)
 
-        # ✅ Save uploaded file
-        file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
-        full_path = os.path.join(default_storage.location, file_path)
+        # ✅ Save uploaded file properly
+        try:
+            file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
+            full_path = default_storage.path(file_path)  # ✅ Use `get_full_path()` safely
+        except Exception as e:
+            return JsonResponse({"error": f"File saving failed: {str(e)}"}, status=500)
 
-        cache.set("progress", 10, timeout=600)
+        cache.set("progress", 10, timeout=600)  # ✅ Initial progress update
 
         try:
-            # ✅ Run script and capture output
+            # ✅ Run the script and capture output/errors
             process = subprocess.Popen(
                 ["python3", "-u", os.path.join(os.path.dirname(__file__), "../script4.py"), full_path],  
                 stdout=subprocess.PIPE,
@@ -105,24 +108,32 @@ def upload_xliff(request):
 
             script_output, script_error = process.communicate()
 
-            # ✅ Ensure script ran successfully
-            if process.returncode != 0 or not script_output.strip():
-                return JsonResponse({"error": "Script execution failed", "details": script_error}, status=500)
-
-            try:
-                script_data = json.loads(script_output.strip())  # ✅ Parse JSON properly
-                cache.set("progress", 100, timeout=600)  # ✅ Mark completion
+            if process.returncode != 0:
                 return JsonResponse({
-                    "translated_file": script_data["translated_file"],
-                    "translations": script_data["translations"]
-                })
+                    "error": "Script execution failed",
+                    "details": script_error.strip() or "Unknown error occurred"
+                }, status=500)
 
+            # ✅ Ensure script output is valid JSON
+            try:
+                script_data = json.loads(script_output.strip())
             except json.JSONDecodeError:
-                return JsonResponse({"error": "Invalid JSON from script.", "raw_output": script_output}, status=500)
+                return JsonResponse({
+                    "error": "Invalid JSON response from script",
+                    "raw_output": script_output.strip()
+                }, status=500)
+
+            cache.set("progress", 100, timeout=600)  # ✅ Translation completed
+
+            return JsonResponse({
+                "translated_file": script_data.get("translated_file", ""),
+                "translations": script_data.get("translations", [])
+            })
 
         except Exception as e:
-            return HttpResponse(f"Error processing XLIFF file: {e}", status=500)
+            return JsonResponse({"error": f"Error processing XLIFF file: {str(e)}"}, status=500)
 
+    return JsonResponse({"error": "Invalid request"}, status=400)
         
 def save_edits(request):
     if request.method == "POST":

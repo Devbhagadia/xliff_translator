@@ -91,6 +91,11 @@
 
         // ✅ Function to display translations dynamically
         function showTranslatedTexts(translations, translatedFileName) {
+            console.log("Received Translated File Name:", translatedFileName);
+            if (!translatedFileName) {
+        console.error("No translated file available!");
+        return;
+    }
             let translationContainer = document.createElement("div");
             translationContainer.id = "translations";
             translationContainer.classList.add("mt-4");
@@ -186,7 +191,7 @@
             let downloadLink = document.getElementById("downloadLink");
 
             if (translatedFileName) {
-                downloadLink.href = `/download/${translatedFileName}/`;  // ✅ Correct file path
+                downloadLink.href = `{% url 'download_file' translatedFileName %}`;  // ✅ Correct file path
                 downloadLink.style.display = "inline-block";  // ✅ Show button
             }
         }

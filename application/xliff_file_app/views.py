@@ -144,7 +144,8 @@ def upload_xliff(request):
 
             return JsonResponse({
                 "translated_file": script_data.get("translated_file", ""),
-                "translations": script_data.get("translations", [])
+                "translations": script_data.get("translations", []),
+                "translation_complete": True
             })
 
         except Exception as e:

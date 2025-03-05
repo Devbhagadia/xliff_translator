@@ -18,11 +18,12 @@ sys.stdout.reconfigure(encoding="utf-8")  # ✅ Force UTF-8 output
 
 TEMP_DIR = os.getenv("MEDIA_ROOT", "/tmp/")
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     print("Usage: script4.py <xliff_file_path>")
     sys.exit(1)
 
 input_file = sys.argv[1]  # Get the file path from the command-line argument
+target_language = sys.argv[2]
 
 if not os.path.exists(input_file):
     print(f"Error: File '{input_file}' not found!")
@@ -112,7 +113,7 @@ async def translate_cell():
                 splittedValue = re.findall(r"%[^%]+%|\S+", value)
                 for elem in splittedValue:
                     if "%" not in elem:
-                        translated = await translator.translate(elem, dest="hi")
+                        translated = await translator.translate(elem, dest=target_language)
                         elem = translated.text
                         specialTxtList.append(elem)
                     else:
@@ -125,7 +126,7 @@ async def translate_cell():
             else:
 
                 # Properly await the async translate function
-                translated = await translator.translate(value, dest="hi")
+                translated = await translator.translate(value, dest=target_language)
                 translated_text = translated.text  # Extract translated text
 
                 print(translated_text)

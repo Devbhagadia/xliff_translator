@@ -96,6 +96,8 @@ def upload_xliff(request):
         cache.set("translation_complete", False, timeout=600)
 
         xliff_file = request.FILES["xliff_file"]
+        target_language = request.POST.get("target_language", "hi")  # ✅ Get selected language (default: English)
+
         if not xliff_file.name.endswith((".xlf", ".xliff")):
             return JsonResponse({"error": "Invalid file format. Please upload an XLIFF file."}, status=400)
 
@@ -110,8 +112,9 @@ def upload_xliff(request):
 
         try:
             # ✅ Run the script and capture output/errors
+            script_path = os.path.join(os.path.dirname(__file__), "../script4.py")
             process = subprocess.Popen(
-                ["python3", "-u", os.path.join(os.path.dirname(__file__), "../script4.py"), full_path],  
+                ["python3", "-u", script_path, full_path, target_language],  # ✅ Pass target language
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True
@@ -160,7 +163,8 @@ def upload_xliff(request):
 
         except Exception as e:
             return JsonResponse({"error": f"Error processing XLIFF file: {str(e)}"}, status=500)
-        
+
+    return JsonResponse({"error": "Invalid request"}, status=400)        
 def save_edits(request):
     if request.method == "POST":
         translated_texts = request.POST.getlist("translated_text[]")

@@ -145,6 +145,7 @@
             document.querySelector(".container").appendChild(translationContainer);
 
             enableEditing();  // ✅ Enable edit/save buttons dynamically
+            console.log("Calling enableDownload with:", data.translated_file);
             enableDownload(translatedFileName);  // ✅ Enable download button
         }
 
@@ -188,13 +189,16 @@
 
         // ✅ Enable Download Button
         function enableDownload(translatedFileName) {
-            let downloadLink = document.getElementById("downloadLink");
+    console.log("Received translatedFileName:", translatedFileName); // Debugging
+    let downloadLink = document.getElementById("downloadLink");
 
-            if (translatedFileName) {
-                downloadLink.href = `{% url 'download_file' translatedFileName %}`;  // ✅ Correct file path
-                downloadLink.style.display = "inline-block";  // ✅ Show button
-            }
-        }
+    if (translatedFileName && translatedFileName.trim() !== "") {
+        downloadLink.href = `/download/${translatedFileName}/`;  // ✅ Set correct URL
+        downloadLink.style.display = "inline-block";  // ✅ Show button
+    } else {
+        console.error("Error: translatedFileName is empty or undefined!");
+    }
+}
     </script>
 </body>
 </html>

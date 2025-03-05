@@ -39,7 +39,7 @@
 
             <!-- ✅ Loader with Progress Bar -->
             <div id="loader" class="mt-3 text-center" style="display: none;">
-                <p>Translating... <span id="progress-text">0%</span></p>
+                <p id="progress-message">Translating... <span id="progress-text">0%</span></p>
                 <div id="progress-container">
                     <div id="progress-bar"></div>
                 </div>
@@ -77,10 +77,38 @@
                     return;
                 }
 
-                showTranslatedTexts(data.translations);  // ✅ Display translations dynamically
+                checkProgress();  // ✅ Start progress tracking
             })
             .catch(error => console.error("Upload error:", error));
         });
+
+        function checkProgress() {
+            fetch("/check-progress/")
+                .then(response => response.json())
+                .then(data => {
+                    console.log("DEBUG Progress:", data.progress, "Translation Complete:", data.translation_complete); 
+
+                    const progressBar = document.getElementById("progress-bar");
+                    const progressText = document.getElementById("progress-text");
+
+                    if (progressBar && progressText) { 
+                        progressBar.style.width = data.progress + "%";
+                        progressText.innerText = data.progress + "%";
+                    }
+
+                    if (data.progress < 100 || !data.translation_complete) {  
+                        setTimeout(checkProgress, 1000);
+                    } else {
+                        document.getElementById("progress-message").innerText = "Translation Complete!";
+                        setTimeout(() => {
+                            document.getElementById("loader").style.display = "none";  
+                        }, 2000);
+
+                        showTranslatedTexts(data.translations);  
+                    }
+                })
+                .catch(error => console.error("Error fetching progress:", error));
+        }
 
         // ✅ Function to display translations dynamically
         function showTranslatedTexts(translations) {
@@ -126,13 +154,12 @@
             table.appendChild(tbody);
             translationContainer.appendChild(table);
 
-            // ✅ Remove old table and append the new one
             let oldContainer = document.getElementById("translations");
             if (oldContainer) oldContainer.remove();
 
             document.querySelector(".container").appendChild(translationContainer);
 
-            enableEditing();  // ✅ Enable edit/save buttons dynamically
+            enableEditing();
         }
 
         // ✅ Enable Editing on Click

@@ -16,7 +16,7 @@ import time
 
 sys.stdout.reconfigure(encoding="utf-8")  # ✅ Force UTF-8 output
 
-TEMP_DIR = "/tmp/" if "RENDER" in os.environ else os.getcwd()
+TEMP_DIR = os.getenv("MEDIA_ROOT", "/tmp/")
 
 if len(sys.argv) < 2:
     print("Usage: script4.py <xliff_file_path>")
@@ -27,6 +27,7 @@ input_file = sys.argv[1]  # Get the file path from the command-line argument
 if not os.path.exists(input_file):
     print(f"Error: File '{input_file}' not found!")
     sys.exit(1)
+# translated_file_path = os.path.join(TEMP_DIR, "demo_translated.xlf")
 
 # get the root element
 tree = ET.ElementTree(file=input_file)

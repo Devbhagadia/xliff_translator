@@ -49,7 +49,7 @@ def check_progress(request):
             cache.set("progress", 100, timeout=600)
             translation_complete = True  # ✅ Ensure it's updated
         else:
-            translation_complete = False  # ✅ Explicitly return False
+            translation_complete = True  # ✅ Explicitly return False
 
     log_debug(f"Returning progress: {progress}, Translation Complete: {translation_complete}")  
 
@@ -143,6 +143,7 @@ def upload_xliff(request):
             request.session["translated_data"] = script_data
 
             cache.set("progress", 100, timeout=600)  # ✅ Translation completed
+            cache.set("translation_complete", True, timeout=600)
 
             return JsonResponse({
                 "translated_file": script_data.get("translated_file", ""),

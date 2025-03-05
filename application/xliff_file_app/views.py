@@ -42,16 +42,18 @@ def check_progress(request):
         progress = 0
         log_debug("Progress was None or completed (100%), resetting to 0%")
 
-    elif progress == 95 and not translation_complete:  # 🚨 ISSUE: Prevents going to 100%
+    elif progress == 95 and not translation_complete:
         log_debug("Translation at 95% but not marked complete. Checking...")
-        if cache.get("translation_complete"):  # ✅ Fix: Double-check status
+        if cache.get("translation_complete"):  
             log_debug("Translation is actually done. Setting progress to 100%.")
             cache.set("progress", 100, timeout=600)
-            return JsonResponse({"progress": 100})
-        return JsonResponse({"progress": 95})  # 🔄 Keeps polling
+            translation_complete = True  # ✅ Ensure it's updated
+        else:
+            translation_complete = False  # ✅ Explicitly return False
 
-    log_debug(f"Returning progress: {progress}")  
-    return JsonResponse({"progress": progress})
+    log_debug(f"Returning progress: {progress}, Translation Complete: {translation_complete}")  
+
+    return JsonResponse({"progress": progress, "translation_complete": translation_complete})  # ✅ Always include this key
 
 
 

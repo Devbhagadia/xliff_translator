@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import subprocess
 from django.conf import settings
 from django.shortcuts import render
-from django.http import FileResponse, HttpResponse
+from django.http import FileResponse, Http404, HttpResponse
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 import uuid
@@ -66,13 +66,15 @@ def enqueue_output(pipe, q):
         pipe.close()
 
 def download_file(request, file_name):
-    file_path = os.path.join(default_storage.location, "xliff_files", file_name)
+    file_path = os.path.join(settings.MEDIA_ROOT, file_name)
 
     log_debug(f"Download requested for {file_path}")
 
     if os.path.exists(file_path):
         log_debug("File exists, sending response")
         return FileResponse(open(file_path, "rb"), as_attachment=True)
+    else:
+        raise Http404("File not found")
 
     log_debug("File not found")
     return HttpResponse("File not found.", status=404)
@@ -142,11 +144,16 @@ def upload_xliff(request):
             script_data = json.loads(script_output)
             request.session["translated_data"] = script_data
 
+            translated_filename = script_data.get("translated_file", "")
+            if translated_filename:
+                translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
+                script_data["translated_file"] = translated_filename
+
             cache.set("progress", 100, timeout=600)  # ✅ Translation completed
             cache.set("translation_complete", True, timeout=600)
 
             return JsonResponse({
-                "translated_file": script_data.get("translated_file", ""),
+                "translated_file": translated_filename,
                 "translations": script_data.get("translations", []),
                 "translation_complete": True
             })

@@ -12,3 +12,6 @@ urlpatterns = [
     path("download-translated/", download_translated_file, name="download_translated_file"),
     path("check-progress/", check_progress, name="check_progress"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

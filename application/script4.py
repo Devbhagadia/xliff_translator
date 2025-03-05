@@ -45,9 +45,8 @@ total_units = 10
 for i in range(1, total_units + 1):
     time.sleep(1)  # Simulate translation work
     progress = int((i / total_units) * 100)  # Calculate progress
-    print(f"TRANSLATION_PROGRESS: {progress}", flush=True)  # ✅ Send progress to Django
-    sys.stdout.flush()
-
+    print(f"TRANSLATION_PROGRESS: {progress}",  file=sys.stderr)  # ✅ Send progress to Django
+    sys.stderr.flush()
 # # Create a workbook
 # book = xlwt.Workbook(encoding="utf-8")
 # sheet1 = book.add_sheet("Sheet 1")
@@ -189,10 +188,10 @@ for files in root:
 
 # Ensure no unwanted text gets added to translations
 # Ensure the last line isn't added if it contains "Translated file saved:"
-translated_Data = [
-    t.split("Translated file saved:")[0].strip() if "Translated file saved:" in t else t
-    for t in translated_Data
-]
+# translated_Data = [
+#     t.split("Translated file saved:")[0].strip() if "Translated file saved:" in t else t
+#     for t in translated_Data
+# ]
 
 
 # Now, write the filtered translations to the file
@@ -207,12 +206,6 @@ response_data = {
     "translations": [{"original": src, "translated": trans} for src, trans in zip(source_Data, translated_Data)]
 }
 
-# ✅ Print JSON so Django can read it
-# print(json.dumps(response_data))  
-json_output = json.dumps(response_data)  
-sys.stdout.write(json_output)  # ✅ Send pure JSON to Django
-sys.stdout.flush()  # ✅ Ensure it's written properly
-
-parsed_data = json.loads(json_output)
-pretty_output = json.dumps(parsed_data, ensure_ascii=False, indent=2)
-print(pretty_output)
+json_output = json.dumps(response_data, ensure_ascii=False)
+sys.stdout.write(json_output)
+sys.stdout.flush()

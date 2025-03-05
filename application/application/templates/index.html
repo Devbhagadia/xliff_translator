@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             margin-top: 10px;
             display: none;
         }
+
         #progress-bar {
             height: 100%;
             background: #4caf50;
@@ -22,21 +24,24 @@
             border-radius: 5px;
             transition: width 0.3s;
         }
+
         /* ✅ Button container for Edit & Download */
         .button-container {
             display: flex;
-            justify-content: center;  
-            gap: 10px;  
+            justify-content: center;
+            gap: 10px;
             margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="container mt-5">
         <h2 class="text-center">XLIFF Translator</h2>
-        
+
         <!-- ✅ File Upload Form -->
-        <form id="uploadForm" action="{% url 'upload_xliff' %}" method="POST" enctype="multipart/form-data" class="mt-4">
+        <form id="uploadForm" action="{% url 'upload_xliff' %}" method="POST" enctype="multipart/form-data"
+            class="mt-4">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="xliffFile" class="form-label">Upload XLIFF File</label>
@@ -59,43 +64,43 @@
 
     <!-- ✅ JavaScript for Upload, Progress & Translation Handling -->
     <script>
-        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+        document.getElementById("uploadForm").addEventListener("submit", function (event) {
             event.preventDefault();  // ✅ Prevent default form submission
-            
+
             let formData = new FormData(this);
             let translateBtn = document.getElementById("translateBtn");
             let loader = document.getElementById("loader");
             let progressContainer = document.getElementById("progress-container");
 
-            translateBtn.style.display = "none";  
-            loader.style.display = "block";  
-            progressContainer.style.display = "block";  
+            translateBtn.style.display = "none";
+            loader.style.display = "block";
+            progressContainer.style.display = "block";
 
             fetch("{% url 'upload_xliff' %}", {  // ✅ Send file to Django backend
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert("Error: " + data.error);
-                    translateBtn.style.display = "block";  
-                    loader.style.display = "none";  
-                    return;
-                }
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert("Error: " + data.error);
+                        translateBtn.style.display = "block";
+                        loader.style.display = "none";
+                        return;
+                    }
 
-                showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
-            })
-            .catch(error => console.error("Upload error:", error));
+                    showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
+                })
+                .catch(error => console.error("Upload error:", error));
         });
 
         // ✅ Function to display translations dynamically
         function showTranslatedTexts(translations, translatedFileName) {
             console.log("Received Translated File Name:", translatedFileName);
             if (!translatedFileName) {
-        console.error("No translated file available!");
-        return;
-    }
+                console.error("No translated file available!");
+                return;
+            }
             let translationContainer = document.createElement("div");
             translationContainer.id = "translations";
             translationContainer.classList.add("mt-4");
@@ -114,7 +119,7 @@
             table.appendChild(thead);
 
             let tbody = document.createElement("tbody");
-            
+
             translations.forEach(entry => {
                 let row = document.createElement("tr");
 
@@ -127,7 +132,7 @@
                 input.name = "translated_text[]";
                 input.classList.add("form-control", "edit-field");
                 input.value = entry.translated;
-                input.setAttribute("disabled", true);  
+                input.setAttribute("disabled", true);
 
                 translatedCell.appendChild(input);
                 row.appendChild(originalCell);
@@ -145,60 +150,65 @@
             document.querySelector(".container").appendChild(translationContainer);
 
             enableEditing();  // ✅ Enable edit/save buttons dynamically
-            console.log("Calling enableDownload with:", data.translated_file);
+            console.log("Calling enableDownload with:", translated_file);
             enableDownload(translatedFileName);  // ✅ Enable download button
         }
 
         // ✅ Enable Editing on Click
         function enableEditing() {
-    let editBtn = document.createElement("button");
-    editBtn.id = "editBtn";
-    editBtn.classList.add("btn", "btn-warning");
-    editBtn.innerText = "Edit";
-    editBtn.addEventListener("click", function() {
-        document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
-        saveBtn.style.display = "inline-block";
-        editBtn.style.display = "none";
-    });
+            let editBtn = document.createElement("button");
+            editBtn.id = "editBtn";
+            editBtn.classList.add("btn", "btn-warning");
+            editBtn.innerText = "Edit";
+            editBtn.addEventListener("click", function () {
+                document.querySelectorAll(".edit-field").forEach(input => input.removeAttribute("disabled"));
+                saveBtn.style.display = "inline-block";
+                editBtn.style.display = "none";
+            });
 
-    let saveBtn = document.createElement("button");
-    saveBtn.id = "saveBtn";
-    saveBtn.classList.add("btn", "btn-success");
-    saveBtn.innerText = "Save Changes";
-    saveBtn.style.display = "none";  // Initially hidden
+            let saveBtn = document.createElement("button");
+            saveBtn.id = "saveBtn";
+            saveBtn.classList.add("btn", "btn-success");
+            saveBtn.innerText = "Save Changes";
+            saveBtn.style.display = "none";  // Initially hidden
 
-    let actionDiv = document.createElement("div");
-    actionDiv.id = "actions";
-    actionDiv.classList.add("button-container");
+            let actionDiv = document.createElement("div");
+            actionDiv.id = "actions";
+            actionDiv.classList.add("button-container");
 
-    actionDiv.appendChild(editBtn);
-    actionDiv.appendChild(saveBtn);  // ✅ FIX: Add Save Changes button here!
+            actionDiv.appendChild(editBtn);
+            actionDiv.appendChild(saveBtn);  // ✅ FIX: Add Save Changes button here!
 
-    // ✅ Adding the download button
-    let downloadLink = document.createElement("a");
-    downloadLink.id = "downloadLink";
-    downloadLink.classList.add("btn", "btn-success");
-    downloadLink.innerText = "Download Translated File";
-    downloadLink.setAttribute("download", "");
-    downloadLink.style.display = "none";  // Hide initially
+            // ✅ Adding the download button
+            let downloadLink = document.createElement("a");
+            downloadLink.id = "downloadLink";
+            downloadLink.classList.add("btn", "btn-success");
+            downloadLink.innerText = "Download Translated File";
+            downloadLink.setAttribute("download", "");
+            downloadLink.style.display = "none";  // Hide initially
 
-    actionDiv.appendChild(downloadLink);
+            actionDiv.appendChild(downloadLink);
 
-    document.querySelector(".container").appendChild(actionDiv);
-}
+            document.querySelector(".container").appendChild(actionDiv);
+        }
 
         // ✅ Enable Download Button
         function enableDownload(translatedFileName) {
-    console.log("Received translatedFileName:", translatedFileName); // Debugging
-    let downloadLink = document.getElementById("downloadLink");
+            console.log("Received translatedFileName:", translatedFileName); // Debugging
 
-    if (translatedFileName && translatedFileName.trim() !== "") {
-        downloadLink.href = `/download/${translatedFileName}/`;  // ✅ Set correct URL
-        downloadLink.style.display = "inline-block";  // ✅ Show button
-    } else {
-        console.error("Error: translatedFileName is empty or undefined!");
-    }
-}
+            let downloadLink = document.getElementById("downloadLink");
+
+            if (translatedFileName && translatedFileName.trim() !== "") {
+                // Extract only the filename (remove any directory path)
+                let fileName = translatedFileName.split('/').pop();  // ✅ Extract filename
+
+                downloadLink.href = `/download/${fileName}/`;  // ✅ Set correct URL
+                downloadLink.style.display = "inline-block";  // ✅ Show button
+            } else {
+                console.error("Error: translatedFileName is empty or undefined!");
+            }
+        }
     </script>
 </body>
+
 </html>

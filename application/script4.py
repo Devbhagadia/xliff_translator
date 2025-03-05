@@ -16,7 +16,7 @@ import time
 
 sys.stdout.reconfigure(encoding="utf-8")  # ✅ Force UTF-8 output
 
-TEMP_DIR = os.getenv("MEDIA_ROOT", "/tmp/")
+TEMP_DIR = os.getenv("MEDIA_ROOT")
 
 if len(sys.argv) < 2:
     print("Usage: script4.py <xliff_file_path>")

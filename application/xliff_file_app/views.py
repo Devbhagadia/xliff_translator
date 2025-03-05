@@ -19,10 +19,16 @@ import queue
 import uuid
 import logging
 from urllib.parse import quote
+import sys
+
 
 
 logger = logging.getLogger(__name__)
-
+sys.stdout.reconfigure(encoding="utf-8")
+def log_debug(message):
+    """ Redirect debug logs to stderr """
+    sys.stderr.write(f"DEBUG: {message}\n")
+    sys.stderr.flush()
 
 def index(request):
     return render(request, "index.html")
@@ -36,13 +42,13 @@ def check_progress(request):
     if progress is None or (progress == 100 and translation_complete):  
         cache.set("progress", 0, timeout=600)
         progress = 0
-        print("DEBUG: Progress was None or a completed translation (100%), resetting to 0%")
+        log_debug("Progress was None or completed (100%), resetting to 0%")
 
     elif progress == 100 and not translation_complete:
-        print("DEBUG: Translation at 100% but not yet complete. Keeping progress at 99%.")
+        log_debug("Translation at 100% but not yet complete. Keeping progress at 95%.")
         return JsonResponse({"progress": 95})
 
-    print(f"DEBUG: Returning progress: {progress}")  
+    log_debug(f"Returning progress: {progress}")  
     return JsonResponse({"progress": progress})
 
 
@@ -59,13 +65,13 @@ def enqueue_output(pipe, q):
 def download_file(request, file_name):
     file_path = os.path.join(default_storage.location, "xliff_files", file_name)
 
-    print(f"DEBUG: Download requested for {file_path}")
+    log_debug(f"Download requested for {file_path}")
 
     if os.path.exists(file_path):
-        print("DEBUG: File exists, sending response")
+        log_debug("File exists, sending response")
         return FileResponse(open(file_path, "rb"), as_attachment=True)
 
-    print("DEBUG: File not found")
+    log_debug("File not found")
     return HttpResponse("File not found.", status=404)
 
 def download_translated_file(request):
@@ -91,7 +97,7 @@ def upload_xliff(request):
         # ✅ Save uploaded file properly
         try:
             file_path = default_storage.save("xliff_files/" + xliff_file.name, ContentFile(xliff_file.read()))
-            full_path = default_storage.path(file_path)  # ✅ Use `get_full_path()` safely
+            full_path = default_storage.path(file_path)
         except Exception as e:
             return JsonResponse({"error": f"File saving failed: {str(e)}"}, status=500)
 
@@ -107,6 +113,10 @@ def upload_xliff(request):
             )
 
             script_output, script_error = process.communicate()
+
+            # ✅ Log stderr for debugging
+            if script_error:
+                log_debug(f"Script error: {script_error.strip()}")
 
             if process.returncode != 0:
                 return JsonResponse({

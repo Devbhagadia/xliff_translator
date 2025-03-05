@@ -76,12 +76,12 @@ for trans in root:
                     elif not element.attrib and text_content:  # Ensure non-empty text
                         source_Data.append(text_content)
 
-print("saving .....")
+# print("saving .....")
 # book.save("src/sourcefile.xls")
-print("saved successfully", source_Data)
-print(f"DEBUG: Found {len(source_Data)} extracted texts")
-for i, text in enumerate(source_Data):
-    print(f"TEXT {i+1}: {repr(text)}")  # Print extracted text with index
+# print("saved successfully", source_Data)
+# print(f"DEBUG: Found {len(source_Data)} extracted texts")
+# for i, text in enumerate(source_Data):
+    # print(f"TEXT {i+1}: {repr(text)}")  # Print extracted text with index
 
 
 # #########################################################################################################
@@ -116,7 +116,7 @@ async def translate_cell():
                         specialTxtList.append(elem)   
 
                 specialTranslatedText= " ".join(specialTxtList)
-                print("specialTextbbbbbbbbbbbbbbbbbbb", specialTranslatedText)
+                # print("specialTextbbbbbbbbbbbbbbbbbbb", specialTranslatedText)
                 translated_Data.append(specialTranslatedText)
 
             else:
@@ -129,12 +129,13 @@ async def translate_cell():
                 translated_Data.append(translated_text)
 
     # translated data
-    print(f"DEBUG: Found {len(translated_Data)} translated texts")
+    print(f"DEBUG: Found {len(translated_Data)} translated texts", file=sys.stderr)
 
 
-for i, text in enumerate(translated_Data):
-    print(f"TRANSLATED {i+1}: {repr(text)}")  # Print translated text
+# for i, text in enumerate(translated_Data):
+    # print(f"TRANSLATED {i+1}: {repr(text)}")  # Print translated text
 # # Run the function in an event loop
+
 asyncio.run(translate_cell())
 
 
@@ -169,8 +170,8 @@ for files in root:
                             for child in source:
                                 target.append(copy.deepcopy(child))  # Append each child to target
     
-                        else:
-                            print("jjjjjjj")
+                        # else:
+                            # print("jjjjjjj")
 
                 trans_unit.append(target)
 
@@ -206,6 +207,5 @@ response_data = {
     "translations": [{"original": src, "translated": trans} for src, trans in zip(source_Data, translated_Data)]
 }
 
-json_output = json.dumps(response_data, ensure_ascii=False)
-sys.stdout.write(json_output)
+sys.stdout.write(json.dumps(response_data, ensure_ascii=False) + "\n")
 sys.stdout.flush()

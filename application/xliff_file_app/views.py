@@ -33,24 +33,25 @@ def log_debug(message):
 def index(request):
     return render(request, "index.html")
 
-def check_progress(request): 
-    """ Returns the current translation progress as JSON """
+def check_progress(request):
     progress = cache.get("progress", 0)
     translation_complete = cache.get("translation_complete", False)
 
-    #  Prevent starting at 100% when a new translation starts
     if progress is None or (progress == 100 and translation_complete):  
         cache.set("progress", 0, timeout=600)
         progress = 0
         log_debug("Progress was None or completed (100%), resetting to 0%")
 
-    elif progress == 100 and not translation_complete:
-        log_debug("Translation at 100% but not yet complete. Keeping progress at 95%.")
-        return JsonResponse({"progress": 95})
+    elif progress == 95 and not translation_complete:  # 🚨 ISSUE: Prevents going to 100%
+        log_debug("Translation at 95% but not marked complete. Checking...")
+        if cache.get("translation_complete"):  # ✅ Fix: Double-check status
+            log_debug("Translation is actually done. Setting progress to 100%.")
+            cache.set("progress", 100, timeout=600)
+            return JsonResponse({"progress": 100})
+        return JsonResponse({"progress": 95})  # 🔄 Keeps polling
 
     log_debug(f"Returning progress: {progress}")  
     return JsonResponse({"progress": progress})
-
 
 
 

@@ -116,7 +116,7 @@ def upload_xliff(request):
 
             # ✅ Log stderr for debugging
             if script_error:
-                log_debug(f"Script error: {script_error.strip()}")
+                logger.debug(f"Script error: {script_error.strip()}")
 
             if process.returncode != 0:
                 return JsonResponse({
@@ -124,14 +124,19 @@ def upload_xliff(request):
                     "details": script_error.strip() or "Unknown error occurred"
                 }, status=500)
 
-            # ✅ Ensure script output is valid JSON
-            try:
-                script_data = json.loads(script_output.strip())
-            except json.JSONDecodeError:
+            # ✅ Extract only valid JSON part (Fixing extra printed text issue)
+            script_output = script_output.strip()
+            match = re.search(r'(\{.*\})', script_output, re.DOTALL)
+            if match:
+                script_output = match.group(1)  # Get only the JSON part
+            else:
                 return JsonResponse({
                     "error": "Invalid JSON response from script",
                     "raw_output": script_output.strip()
                 }, status=500)
+
+            # ✅ Parse JSON safely
+            script_data = json.loads(script_output)
 
             cache.set("progress", 100, timeout=600)  # ✅ Translation completed
 
@@ -142,8 +147,6 @@ def upload_xliff(request):
 
         except Exception as e:
             return JsonResponse({"error": f"Error processing XLIFF file: {str(e)}"}, status=500)
-
-    return JsonResponse({"error": "Invalid request"}, status=400)
         
 def save_edits(request):
     if request.method == "POST":

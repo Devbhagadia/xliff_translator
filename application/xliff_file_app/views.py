@@ -177,9 +177,14 @@ def upload_xliff(request):
             return JsonResponse({"error": f"Error processing XLIFF file: {str(e)}"}, status=500)
 
     return JsonResponse({"error": "Invalid request"}, status=400)    
-    
+
+
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
 def save_edits(request):
     if request.method == "POST":
+        import json
+        data = json.loads(request.body)
         translated_texts = request.POST.getlist("translated_text[]")
         print(f"DEBUG: Received {len(translated_texts)} translations")
 

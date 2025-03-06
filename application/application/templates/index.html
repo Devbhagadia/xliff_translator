@@ -443,34 +443,52 @@
     });
 });
 
-function saveTranslations() {
-    let translations = $(".edit-field").map(function () {
-        return this.value;
-    }).get(); // Collecting all translations in an array
+document.addEventListener("DOMContentLoaded", function () {
+        console.log("✅ Document loaded. Binding save button.");
 
-    console.log("Sending translations:", translations); // ✅ Debug log
-
-    $.ajax({
-        url: "{% url 'save_edits' %}",  // Ensure this URL is correct
-        type: "POST",
-        data: JSON.stringify({ translated_text: translations }),  // Sending JSON data
-        contentType: "application/json",  // Ensuring JSON format
-        headers: { "X-CSRFToken": "{{ csrf_token }}" },  // Adding CSRF token to headers
-        success: function(response) {
-            if (response.success) {
-                alert("Changes saved successfully!");
-                $("#saveBtn").hide();
-                $("#downloadLink").attr("href", `/serve-tmp/${response.new_file_name}/`).show();
-            } else {
-                alert("Error: " + response.error);
+        // Bind saveTranslations() to the Save button
+        document.addEventListener("click", function (event) {
+            if (event.target.id === "saveBtn") {
+                console.log("✅ Save button clicked. Calling saveTranslations().");
+                saveTranslations();
             }
-        },
-        error: function(xhr) {
-            console.error("Server Error:", xhr.responseJSON);
-            alert("Error saving translations.");
-        }
+        });
     });
-}
+
+    function saveTranslations() {
+        let translations = [];
+        document.querySelectorAll(".edit-field").forEach(input => {
+            translations.push(input.value);
+        });
+
+        console.log("✅ Sending translations:", translations); // Debugging log
+
+        fetch("{% url 'save_edits' %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+            body: JSON.stringify({ translated_text: translations }) // Sending JSON data
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("✅ Server response:", data);
+            if (data.success) {
+                alert("Changes saved successfully!");
+                document.getElementById("saveBtn").style.display = "none";
+                let downloadLink = document.getElementById("downloadLink");
+                downloadLink.href = `/serve-tmp/${data.new_file_name}/`;
+                downloadLink.style.display = "inline-block";
+            } else {
+                alert("Error: " + data.error);
+            }
+        })
+        .catch(error => {
+            console.error("❌ Error saving translations:", error);
+            alert("Error saving translations.");
+        });
+    }
         // ✅ Enable Download Button
         function enableDownload(translatedFileName) {
             console.log("Received translatedFileName:", translatedFileName);

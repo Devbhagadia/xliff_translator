@@ -255,10 +255,10 @@ def save_edits(request):
 
             print(f" SUCCESS! File saved at: {new_file_path}")
             request.session["new_file_path"] = new_file_path  
-            return render(request, "save_edits.html", {"new_file_name": new_file_name})
+            return JsonResponse({"success": True, "new_file_name": new_file_name})
 
         except Exception as e:
-            return HttpResponse(f"Error saving edits: {e}")
+            return JsonResponse({"error": f"Error saving edits: {e}"}, status=500)
 
-    return HttpResponse("Invalid request.")
+    return JsonResponse({"error": "Invalid request"}, status=400)
 

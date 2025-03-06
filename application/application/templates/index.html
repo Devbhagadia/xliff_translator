@@ -444,21 +444,25 @@
             });
 
             $.ajax({
-                url: "{% url 'save_edits' %}",
-                type: "POST",
-                data: {
-                    translated_text: translations,
-                    csrfmiddlewaretoken: "{{ csrf_token }}"
-                },
-                success: function (response) {
-                    alert("Changes saved successfully!");
-                    $("#saveBtn").hide();
-                    $("#downloadLink").show();
-                },
-                error: function (xhr) {
-                    alert("Error saving translations: " + xhr.responseJSON.error);
-                }
-            });
+    url: "{% url 'save_edits' %}",
+    type: "POST",
+    data: {
+        translated_text: translations,
+        csrfmiddlewaretoken: "{{ csrf_token }}"
+    },
+    success: function(response) {
+        if (response.success) {
+            alert("Changes saved successfully!");
+            $("#saveBtn").hide();
+            $("#downloadLink").attr("href", `/serve-tmp/${response.new_file_name}/`).show();
+        } else {
+            alert("Error: " + response.error);
+        }
+    },
+    error: function(xhr) {
+        alert("Error saving translations: " + xhr.responseJSON.error);
+    }
+});
         }
 
         // ✅ Enable Download Button

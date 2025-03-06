@@ -189,7 +189,7 @@ def save_edits(request):
         print(f"DEBUG: Received {len(translated_texts)} translations")
 
         tmp_dir = "/tmp/"
-        xlf_files = [f for f in os.listdir(tmp_dir) if f.endswith(".xlf")]
+        xlf_files = [f for f in os.listdir(tmp_dir) if f.endswith((".xlf", ".xliff"))]
         if not xlf_files:
             return JsonResponse({"error": "No translated file found in /tmp/."}, status=404)
         

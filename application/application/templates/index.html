@@ -444,7 +444,7 @@
             if (translatedFileName && translatedFileName.trim() !== "") {
                 let fileName = translatedFileName.split('/').pop();  
 
-                downloadLink.href = `/tmp/${fileName}/`;  
+                downloadLink.href = `${translatedFileName}`;  
                 downloadLink.style.display = "inline-block";  
             } else {
                 console.error("Error: translatedFileName is empty or undefined!");

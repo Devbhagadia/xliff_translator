@@ -310,7 +310,7 @@
 
     <!-- ✅ JavaScript for Upload, Progress & Translation Handling -->
     <script>
-        document.getElementById("uploadForm").addEventListener("submit", function (event) {
+ document.getElementById("uploadForm").addEventListener("submit", function (event) {
             event.preventDefault();  // ✅ Prevent default form submission
 
             let formData = new FormData(this);
@@ -319,11 +319,21 @@
 
             let translateBtn = document.getElementById("translateBtn");
             let loader = document.getElementById("loader");
-            let progressContainer = document.getElementById("progress-container");
+            let progressBar = document.getElementById("progress-bar");
+            let progressText = document.getElementById("progress-text");
 
             translateBtn.style.display = "none";
             loader.style.display = "block";
-            progressContainer.style.display = "block";
+            // progressContainer.style.display = "block";
+
+            let progress = 0;
+    let progressInterval = setInterval(() => {
+        if (progress < 95) {  // Don't go to 100% until response arrives
+            progress += 5;
+            progressBar.style.width = progress + "%";
+            progressText.innerText = progress + "%";
+        }
+    }, 500);
 
             fetch("{% url 'upload_xliff' %}", {  // ✅ Send file and language to Django backend
                 method: "POST",
@@ -342,6 +352,7 @@
                 })
                 .catch(error => console.error("Upload error:", error));
         });
+
 
         // ✅ Function to display translations dynamically
         function showTranslatedTexts(translations, translatedFileName) {

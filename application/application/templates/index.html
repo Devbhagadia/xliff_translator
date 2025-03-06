@@ -470,7 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Content-Type": "application/json",
                 "X-CSRFToken": "{{ csrf_token }}"
             },
-            body: JSON.stringify({ translated_text: translations }) // Sending JSON data
+            body: JSON.stringify({ translated_texts: translations }) // Sending JSON data
         })
         .then(response => response.json())
         .then(data => {

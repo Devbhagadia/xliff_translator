@@ -311,48 +311,58 @@
     <!-- ✅ JavaScript for Upload, Progress & Translation Handling -->
     <script>
  document.getElementById("uploadForm").addEventListener("submit", function (event) {
-            event.preventDefault();  // ✅ Prevent default form submission
+    event.preventDefault();  // ✅ Prevent default form submission
 
-            let formData = new FormData(this);
-            let selectedLanguage = document.getElementById("languageSelect").value;
-            formData.append("target_language", selectedLanguage);  // ✅ Add language selection
+    let formData = new FormData(this);
+    let selectedLanguage = document.getElementById("languageSelect").value;
+    formData.append("target_language", selectedLanguage);  // ✅ Add language selection
 
-            let translateBtn = document.getElementById("translateBtn");
-            let loader = document.getElementById("loader");
-            let progressBar = document.getElementById("progress-bar");
-            let progressText = document.getElementById("progress-text");
+    let translateBtn = document.getElementById("translateBtn");
+    let loader = document.getElementById("loader");
+    let progressBar = document.getElementById("progress-bar");
+    let progressText = document.getElementById("progress-text");
 
-            translateBtn.style.display = "none";
-            loader.style.display = "block";
-            // progressContainer.style.display = "block";
+    translateBtn.style.display = "none";
+    loader.style.display = "block";
 
-            let progress = 0;
+    let progress = 0;
     let progressInterval = setInterval(() => {
         if (progress < 95) {  // Don't go to 100% until response arrives
             progress += 5;
             progressBar.style.width = progress + "%";
-            progressText.innerText = progress + "%";
+            progressText.innerText = `Translating... ${progress}%`;
         }
     }, 500);
 
-            fetch("{% url 'upload_xliff' %}", {  // ✅ Send file and language to Django backend
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.error) {
-                        alert("Error: " + data.error);
-                        translateBtn.style.display = "block";
-                        loader.style.display = "none";
-                        return;
-                    }
+    fetch("{% url 'upload_xliff' %}", {  // ✅ Send file and language to Django backend
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        clearInterval(progressInterval); // ✅ Stop progress simulation
+        progressBar.style.width = "100%";
+        progressText.innerText = "Translation Complete!";
 
-                    showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
-                })
-                .catch(error => console.error("Upload error:", error));
-        });
+        setTimeout(() => {
+            loader.style.display = "none"; // ✅ Hide the loader after 1 sec
+        }, 1000);
 
+        if (data.error) {
+            alert("Error: " + data.error);
+            translateBtn.style.display = "block";
+            return;
+        }
+
+        showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
+    })
+    .catch(error => {
+        console.error("Upload error:", error);
+        clearInterval(progressInterval);
+        loader.style.display = "none"; // ✅ Hide loader on error
+        translateBtn.style.display = "block";
+    });
+});
 
         // ✅ Function to display translations dynamically
         function showTranslatedTexts(translations, translatedFileName) {

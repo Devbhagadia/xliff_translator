@@ -342,11 +342,11 @@
     .then(data => {
         clearInterval(progressInterval); // ✅ Stop progress simulation
         progressBar.style.width = "100%";
-        progressText.innerText = "Translation Complete!";
+        // progressText.innerText = "Translation Complete!";
 
-        setTimeout(() => {
-            loader.style.display = "none"; // ✅ Hide the loader after 1 sec
-        }, 1000);
+        // setTimeout(() => {
+        //     loader.style.display = "none"; // ✅ Hide the loader after 1 sec
+        // }, 1000);
 
         if (data.error) {
             alert("Error: " + data.error);

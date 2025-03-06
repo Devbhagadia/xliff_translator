@@ -66,18 +66,16 @@ def enqueue_output(pipe, q):
         pipe.close()
 
 def download_file(request, file_name):
-    file_path = os.path.join(settings.MEDIA_ROOT, file_name)
+    file_path = f"/tmp/{file_name}"  # ✅ Look for the file in /tmp/
 
-    log_debug(f"Download requested for {file_path}")
+    logger.debug(f"Download requested for {file_path}")
 
     if os.path.exists(file_path):
-        log_debug("File exists, sending response")
+        logger.debug("File exists, sending response")
         return FileResponse(open(file_path, "rb"), as_attachment=True)
-    else:
-        raise Http404("File not found")
-
-    log_debug("File not found")
-    return HttpResponse("File not found.", status=404)
+    
+    logger.debug("File not found")
+    raise Http404("File not found")
 
 def download_translated_file(request):
     new_file_path = request.session.get("new_file_path")
@@ -90,13 +88,26 @@ def download_translated_file(request):
     
     return response
 
+import os
+import json
+import subprocess
+import re
+import logging
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from django.http import JsonResponse
+from django.conf import settings
+from django.core.cache import cache
+
+logger = logging.getLogger(__name__)
+
 def upload_xliff(request):
     if request.method == "POST" and request.FILES.get("xliff_file"):
         cache.set("progress", 0, timeout=600)
         cache.set("translation_complete", False, timeout=600)
 
         xliff_file = request.FILES["xliff_file"]
-        target_language = request.POST.get("target_language", "hi")  # ✅ Get selected language (default: English)
+        target_language = request.POST.get("target_language", "hi")  # ✅ Get selected language (default: Hindi)
 
         if not xliff_file.name.endswith((".xlf", ".xliff")):
             return JsonResponse({"error": "Invalid file format. Please upload an XLIFF file."}, status=400)
@@ -147,10 +158,11 @@ def upload_xliff(request):
             script_data = json.loads(script_output)
             request.session["translated_data"] = script_data
 
-            translated_filename = script_data.get("translated_file", "")
-            if translated_filename:
-                translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
-                script_data["translated_file"] = translated_filename
+            # ✅ Ensure only filename is stored, not full path
+            translated_filename = os.path.basename(script_data.get("translated_file", ""))
+            translated_file_path = os.path.join("/tmp/", translated_filename)
+
+            script_data["translated_file"] = translated_filename  # ✅ Update response with only the filename
 
             cache.set("progress", 100, timeout=600)  # ✅ Translation completed
             cache.set("translation_complete", True, timeout=600)

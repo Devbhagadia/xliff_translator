@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("", index, name="index"),  # Make sure you have a name for index
     path("upload/", upload_xliff, name="upload_xliff"),  # This should match the form action
-    path("download/<str:file_name>/", download_file, name="download_file"),
+    path("serve-tmp/<str:file_name>/", download_file, name="serve_tmp_file"),
     path("save-edits/", save_edits, name="save_edits"),
     path("download-translated/", download_translated_file, name="download_translated_file"),
     path("check-progress/", check_progress, name="check_progress"),

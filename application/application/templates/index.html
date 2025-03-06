@@ -32,6 +32,8 @@
             gap: 10px;
             margin-top: 20px;
         }
+        .editable { width: 100%; padding: 5px; font-size: 16px; }
+        .hidden { display: none; }
     </style>
 </head>
 
@@ -433,6 +435,30 @@
             actionDiv.appendChild(downloadLink);
 
             document.querySelector(".container").appendChild(actionDiv);
+        }
+
+        function saveTranslations() {
+            let translations = [];
+            document.querySelectorAll(".edit-field").forEach(input => {
+                translations.push(input.value);
+            });
+
+            $.ajax({
+                url: "{% url 'save_edits' %}",
+                type: "POST",
+                data: {
+                    translated_text: translations,
+                    csrfmiddlewaretoken: "{{ csrf_token }}"
+                },
+                success: function (response) {
+                    alert("Changes saved successfully!");
+                    $("#saveBtn").hide();
+                    $("#downloadLink").show();
+                },
+                error: function (xhr) {
+                    alert("Error saving translations: " + xhr.responseJSON.error);
+                }
+            });
         }
 
         // ✅ Enable Download Button

@@ -176,7 +176,8 @@ def upload_xliff(request):
         except Exception as e:
             return JsonResponse({"error": f"Error processing XLIFF file: {str(e)}"}, status=500)
 
-    return JsonResponse({"error": "Invalid request"}, status=400)        
+    return JsonResponse({"error": "Invalid request"}, status=400)    
+    
 def save_edits(request):
     if request.method == "POST":
         translated_texts = request.POST.getlist("translated_text[]")

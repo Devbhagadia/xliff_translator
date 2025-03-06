@@ -185,7 +185,7 @@ def save_edits(request):
     if request.method == "POST":
         import json
         data = json.loads(request.body)
-        translated_texts = request.POST.getlist("translated_text[]")
+        translated_texts = data.get("translated_texts", [])
         print(f"DEBUG: Received {len(translated_texts)} translations")
 
         tmp_dir = "/tmp/"

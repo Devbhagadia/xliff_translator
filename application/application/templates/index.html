@@ -437,34 +437,40 @@
             document.querySelector(".container").appendChild(actionDiv);
         }
 
-        function saveTranslations() {
-            let translations = [];
-            document.querySelectorAll(".edit-field").forEach(input => {
-                translations.push(input.value);
-            });
-
-            $.ajax({
-    url: "{% url 'save_edits' %}",
-    type: "POST",
-    data: {
-        translated_text: translations,
-        csrfmiddlewaretoken: "{{ csrf_token }}"
-    },
-    success: function(response) {
-        if (response.success) {
-            alert("Changes saved successfully!");
-            $("#saveBtn").hide();
-            $("#downloadLink").attr("href", `/serve-tmp/${response.new_file_name}/`).show();
-        } else {
-            alert("Error: " + response.error);
-        }
-    },
-    error: function(xhr) {
-        alert("Error saving translations: " + xhr.responseJSON.error);
-    }
+        $(document).ready(function () {
+    $("#saveBtn").on("click", function () { 
+        saveTranslations(); 
+    });
 });
-        }
 
+function saveTranslations() {
+    let translations = $(".edit-field").map(function () {
+        return this.value;
+    }).get(); // Collecting all translations in an array
+
+    console.log("Sending translations:", translations); // ✅ Debug log
+
+    $.ajax({
+        url: "{% url 'save_edits' %}",  // Ensure this URL is correct
+        type: "POST",
+        data: JSON.stringify({ translated_text: translations }),  // Sending JSON data
+        contentType: "application/json",  // Ensuring JSON format
+        headers: { "X-CSRFToken": "{{ csrf_token }}" },  // Adding CSRF token to headers
+        success: function(response) {
+            if (response.success) {
+                alert("Changes saved successfully!");
+                $("#saveBtn").hide();
+                $("#downloadLink").attr("href", `/serve-tmp/${response.new_file_name}/`).show();
+            } else {
+                alert("Error: " + response.error);
+            }
+        },
+        error: function(xhr) {
+            console.error("Server Error:", xhr.responseJSON);
+            alert("Error saving translations.");
+        }
+    });
+}
         // ✅ Enable Download Button
         function enableDownload(translatedFileName) {
             console.log("Received translatedFileName:", translatedFileName);

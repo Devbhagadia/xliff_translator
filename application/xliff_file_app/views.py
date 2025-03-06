@@ -184,7 +184,7 @@ from django.views.decorators.csrf import csrf_exempt
 def save_edits(request):
     if request.method == "POST":
         import json
-        data = json.loads(request.body)
+        data = json.loads(request.body.decode('utf-8'))
         translated_texts = data.get("translated_texts", [])
         print(f"DEBUG: Received {len(translated_texts)} translations")
 

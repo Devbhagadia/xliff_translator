@@ -190,7 +190,7 @@ def save_edits(request):
 
         original_file_path = request.session.get("translated_file_path")
         if not original_file_path or not os.path.exists(original_file_path):
-            return HttpResponse("Error: Translated file not found.")
+            return JsonResponse({"error": "Translated file not found."}, status=404)
 
         new_file_name = f"translated_{uuid.uuid4().hex}.xlf"
         new_file_path = os.path.join(os.path.dirname(original_file_path), new_file_name)
@@ -238,8 +238,7 @@ def save_edits(request):
             #  Strictly Check Count
             if total_translation_units != len(translated_texts):
                 print(" ERROR: Mismatch in translation count!")
-                return HttpResponse(f"Error: Expected {total_translation_units} translations, but got {len(translated_texts)}.")
-
+                return JsonResponse({"error": f"Mismatch in translation count. Expected {total_translation_units}, but got {len(translated_texts)}."}, status=400)
             #  Apply Translations
             text_index = 0
             for target, elements, elem_type in target_mapping:

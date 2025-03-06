@@ -188,12 +188,18 @@ def save_edits(request):
         translated_texts = request.POST.getlist("translated_text[]")
         print(f"DEBUG: Received {len(translated_texts)} translations")
 
-        original_file_path = request.session.get("translated_file_path")
-        if not original_file_path or not os.path.exists(original_file_path):
-            return JsonResponse({"error": "Translated file not found."}, status=404)
+        tmp_dir = "/tmp/"
+        xlf_files = [f for f in os.listdir(tmp_dir) if f.endswith(".xlf")]
+        if not xlf_files:
+            return JsonResponse({"error": "No translated file found in /tmp/."}, status=404)
+        
+        xlf_files.sort(key=lambda f: os.path.getmtime(os.path.join(tmp_dir, f)), reverse=True)
+        original_file_path = os.path.join(tmp_dir, xlf_files[0])
+        # if not original_file_path or not os.path.exists(original_file_path):
+        #     return JsonResponse({"error": "Translated file not found."}, status=404)
 
         new_file_name = f"translated_{uuid.uuid4().hex}.xlf"
-        new_file_path = os.path.join(os.path.dirname(original_file_path), new_file_name)
+        new_file_path = os.path.join(tmp_dir, new_file_name)
 
         try:
             #  Load XLIFF File

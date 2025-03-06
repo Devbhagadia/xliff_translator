@@ -330,7 +330,7 @@
         if (progress < 95) {  // Don't go to 100% until response arrives
             progress += 5;
             progressBar.style.width = progress + "%";
-            progressText.innerText = `Translating... ${progress}%`;
+            progressText.innerText = `${progress}%`;
         }
     }, 500);
 

@@ -183,15 +183,10 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def save_edits(request):
     if request.method == "POST":
-        try:
-            data = json.loads(request.body.decode('utf-8'))
-            return JsonResponse({"debug": data})  # 🛠️ TEMPORARY DEBUG RESPONSE
-        except Exception as e:
-            return JsonResponse({"error": f"JSON Decode Error: {str(e)}"}, status=400)
-        # import json
-        # data = json.loads(request.body.decode('utf-8'))
-        # translated_texts = data.get("translations", [])
-        # print(f"DEBUG: Received {len(translated_texts)} translations")
+        import json
+        data = json.loads(request.body.decode('utf-8'))
+        translated_texts = data.get("translated_texts", []) 
+        print(f"DEBUG: Received {len(translated_texts)} translations")
 
         tmp_dir = "/tmp/"
         xlf_files = [f for f in os.listdir(tmp_dir) if f.endswith(".xlf")]

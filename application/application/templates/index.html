@@ -326,6 +326,9 @@
     loader.style.display = "block";
 
     let progress = 0;
+    let messageDisplayed = false;
+
+    // ✅ Progress Bar Animation
     let progressInterval = setInterval(() => {
         if (progress < 95) {  // Don't go to 100% until response arrives
             progress += 5;
@@ -334,31 +337,44 @@
         }
     }, 500);
 
+    // ✅ Show warning message if translation takes longer than 30s
+    let timeoutWarning = setTimeout(() => {
+        if (!messageDisplayed) {
+            progressText.innerText += " (Don't refresh, this might take a few minutes...)";
+            messageDisplayed = true;
+        }
+    }, 30000); // 30 seconds
+
     fetch("{% url 'upload_xliff' %}", {  // ✅ Send file and language to Django backend
         method: "POST",
         body: formData
     })
     .then(response => response.json())
     .then(data => {
-        clearInterval(progressInterval); // ✅ Stop progress simulation
-        progressBar.style.width = "100%";
-        // progressText.innerText = "Translation Complete!";
-
-        setTimeout(() => {
-            loader.style.display = "none"; // ✅ Hide the loader after 1 sec
-        }, 10);
+        clearInterval(progressInterval);
+        clearTimeout(timeoutWarning);
 
         if (data.error) {
             alert("Error: " + data.error);
             translateBtn.style.display = "block";
+            loader.style.display = "none";
             return;
         }
 
         showTranslatedTexts(data.translations, data.translated_file);  // ✅ Pass translated file name
+
+        // ✅ Hide progress bar & message once translation is done
+        progressBar.style.width = "100%";
+        // progressText.innerText = "Translation Completed!";
+        setTimeout(() => {
+            loader.style.display = "none"; // ✅ Hide the loader after 2 sec
+        }, 10);
     })
     .catch(error => {
         console.error("Upload error:", error);
+        alert("Translation failed!");
         clearInterval(progressInterval);
+        clearTimeout(timeoutWarning);
         loader.style.display = "none"; // ✅ Hide loader on error
         translateBtn.style.display = "block";
     });

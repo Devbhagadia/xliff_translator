@@ -193,25 +193,24 @@ def save_edits(request):
         if not xlf_files:
             return JsonResponse({"error": "No translated file found in /tmp/."}, status=404)
         
+        # Sort by modified time to get the latest file
         xlf_files.sort(key=lambda f: os.path.getmtime(os.path.join(tmp_dir, f)), reverse=True)
         original_file_path = os.path.join(tmp_dir, xlf_files[0])
-        # if not original_file_path or not os.path.exists(original_file_path):
-        #     return JsonResponse({"error": "Translated file not found."}, status=404)
 
         new_file_name = f"translated_{uuid.uuid4().hex}.xlf"
         new_file_path = os.path.join(tmp_dir, new_file_name)
 
         try:
-            #  Load XLIFF File
+            # Load XLIFF File
             tree = ET.parse(original_file_path)
             root = tree.getroot()
             ns = {'ns0': 'urn:oasis:names:tc:xliff:document:1.2'}
 
-            #  Find all <target> elements
+            # Find all <target> elements
             target_elements = root.findall(".//ns0:target", ns)
             print(f"DEBUG: Found {len(target_elements)} <target> elements")
 
-            #  Extract elements that need translation
+            # Extract elements that need translation
             target_mapping = []  # Stores tuples (target, child elements, type)
             total_translation_units = 0  
 
@@ -222,33 +221,43 @@ def save_edits(request):
                 elements = []
                 elem_type = None
                 
+                # ✅ Handle <g> elements inside <target>
                 if g_elements:
                     elements = [g for g in g_elements if g.text and g.text.strip()]
                     elem_type = "g"
+                
+                # ✅ Handle <text> elements inside <target> (Nested case)
                 elif text_elements:
                     elements = [t for t in text_elements if t.text and t.text.strip()]
-                    elem_type = "text"
+                    elem_type = "text_nested"
+                
+                # ✅ Handle direct <target> text
                 elif target.text and target.text.strip():
                     elements = [target]  # Treat as list for consistency
                     elem_type = "direct"
 
-                #  Only add if there's valid text to translate
+                # ✅ Only add if there's valid text to translate
                 if elements:
                     total_translation_units += len(elements)  
                     target_mapping.append((target, elements, elem_type))
                 else:
                     print(f" Skipping empty <target>: {ET.tostring(target, encoding='unicode')}")
 
-            print(f" Expected {total_translation_units} translations (should match received count of)")
+            print(f" Expected {total_translation_units} translations (should match received count)")
 
-
-            #  Strictly Check Count
+            # ✅ Strictly Check Count
             if total_translation_units != len(translated_texts):
                 print(" ERROR: Mismatch in translation count!")
                 return JsonResponse({"error": f"Mismatch in translation count. Expected {total_translation_units}, but got {len(translated_texts)}."}, status=400)
-            #  Apply Translations
+
+            # ✅ Apply Translations
             text_index = 0
             for target, elements, elem_type in target_mapping:
+                if elem_type == "text_nested":
+                    combined_text = " ".join(t.text for t in elements if t.text)
+                    target.text = combined_text  # Merge into <target>
+                    for t in elements:
+                        target.remove(t)  # Remove <text> elements after merging
                 for elem in elements:
                     if text_index < len(translated_texts):
                         translation = translated_texts[text_index].strip()
@@ -257,11 +266,19 @@ def save_edits(request):
                     else:
                         print(f" WARNING: No translation available for {elem_type} - id={elem.get('id', 'N/A')}")
 
-            #  Final Check Before Saving
+            # ✅ Final Check Before Saving
             if text_index != len(translated_texts):
                 print(f" ERROR: Expected to apply {len(translated_texts)} translations, but only applied {text_index}")
 
-            #  Save Updated File
+            # ✅ Normalize <target> Format Before Saving
+            for target in target_elements:
+                nested_texts = target.findall(".//ns0:text", ns)
+                if nested_texts:
+                    target.text = " ".join(t.text for t in nested_texts if t.text)
+                    for t in nested_texts:
+                        target.remove(t)  # Remove all <text> elements
+
+            # ✅ Save Updated File
             tree.write(new_file_path, encoding="utf-8", xml_declaration=True)
 
             print(f" SUCCESS! File saved at: {new_file_path}")
@@ -272,4 +289,3 @@ def save_edits(request):
             return JsonResponse({"error": f"Error saving edits: {e}"}, status=500)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
-

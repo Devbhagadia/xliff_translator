@@ -206,17 +206,18 @@ def save_edits(request):
             root = tree.getroot()
             ns = {'ns0': 'urn:oasis:names:tc:xliff:document:1.2'}
 
-            # Find all <target> elements
-            target_elements = root.findall(".//ns0:target", ns)
+            # Find all <target> elements (excluding those in <header>)
+            target_elements = root.findall(".//ns0:body//ns0:target", ns)
             print(f"DEBUG: Found {len(target_elements)} <target> elements")
 
             # Extract elements that need translation
-            target_mapping = []  # Stores tuples (target, child elements, type)
+            target_mapping = []  # Stores tuples (target, elements inside, type)
             total_translation_units = 0  
 
             for target in target_elements:
                 g_elements = target.findall(".//ns0:g", ns)
                 text_elements = target.findall(".//ns0:text", ns)
+                mrk_elements = target.findall(".//ns0:mrk", ns)
 
                 elements = []
                 elem_type = None
@@ -230,6 +231,11 @@ def save_edits(request):
                 elif text_elements:
                     elements = [t for t in text_elements if t.text and t.text.strip()]
                     elem_type = "text_nested"
+                
+                # ✅ Handle <mrk> elements inside <target>
+                elif mrk_elements:
+                    elements = [m for m in mrk_elements if m.text and m.text.strip()]
+                    elem_type = "mrk"
                 
                 # ✅ Handle direct <target> text
                 elif target.text and target.text.strip():
@@ -258,6 +264,7 @@ def save_edits(request):
                     target.text = combined_text  # Merge into <target>
                     for t in elements:
                         target.remove(t)  # Remove <text> elements after merging
+
                 for elem in elements:
                     if text_index < len(translated_texts):
                         translation = translated_texts[text_index].strip()
@@ -265,10 +272,6 @@ def save_edits(request):
                         text_index += 1
                     else:
                         print(f" WARNING: No translation available for {elem_type} - id={elem.get('id', 'N/A')}")
-
-            # ✅ Final Check Before Saving
-            if text_index != len(translated_texts):
-                print(f" ERROR: Expected to apply {len(translated_texts)} translations, but only applied {text_index}")
 
             # ✅ Normalize <target> Format Before Saving
             for target in target_elements:
